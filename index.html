@@ -1,6 +1,39 @@
 <!DOCTYPE html>
-<head>
-</head>
-<body>
-    <script src="./main.js"></script>
-</body>
+<html>
+    <head>
+        <title>Terraforming Mars Victory Point Calculator</title>
+    </head>
+    <body>
+        <h1>Terraforming Mars Victory Point Calculator</h1>
+        <form>
+            <label for="terraform_rating">Terraform Rating: </label>
+            <input type="number" name="terraform_rating" id="terraform_rating" min="0" max="999">
+            <br>
+            <br>
+            <label for="milestones">Milestones: </label>
+            <input type="number" name="milestones" id="milestones" min="0" max="3">
+            <br>
+            <br>
+            <p>Award 1:
+                <input type="radio" name="award_1" id="winner1" value="1st">
+                <label for="winner1">1st</label>
+                <input type="radio" name="award_1" id="contender1" value="2nd">
+                <label for="contender1">2nd</label>
+            </p>
+            <p>Award 2:
+                <input type="radio" name="award_2" id="winner2" value="1st">
+                <label for="winner2">1st</label>
+                <input type="radio" name="award_2" id="contender2" value="2nd">
+                <label for="contender2">2nd</label>
+            </p>
+            <p>Award 3:
+                <input type="radio" name="award_3" id="winner3" value="1st">
+                <label for="winner3">1st</label>
+                <input type="radio" name="award_3" id="contender3" value="2nd">
+                <label for="contender3">2nd</label>
+            </p>
+            <input type="submit" value="Submit">
+        </form>
+        <script src="./main.js"></script>
+    </body>
+</html>
