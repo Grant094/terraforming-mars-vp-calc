@@ -5,13 +5,14 @@
     </head>
     <body>
         <h1>Terraforming Mars Victory Point Calculator</h1>
+        <h2 id="total_victory_points">Total Victory Points: 0</h2>
         <form>
             <label for="terraform_rating">Terraform Rating: </label>
-            <input type="number" name="terraform_rating" id="terraform_rating" min="0" max="999">
+            <input type="number" name="terraform_rating" id="terraform_rating" min="0" max="999" onblur="calcVictoryPoints()">
             <br>
             <br>
             <label for="milestones">Milestones: </label>
-            <input type="number" name="milestones" id="milestones" min="0" max="3">
+            <input type="number" name="milestones" id="milestones" min="0" max="3" onblur="calcVictoryPoints()">
             <p>Award 1:
                 <input type="radio" name="award_1" id="winner1" value="winner1">
                 <label for="winner1">1st</label>
