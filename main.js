@@ -11,19 +11,19 @@ function calcVictoryPoints() {
     if (document.getElementById("winner1").checked) {
         totalVictoryPoints += FIRST_PLACE_AWARD_VP;
     } else if (document.getElementById("contender1").checked) {
-        totalVictoryPoints += 2;
+        totalVictoryPoints += SECOND_PLACE_AWARD_VP;
     }
 
     if (document.getElementById("winner2").checked) {
         totalVictoryPoints += FIRST_PLACE_AWARD_VP;
     } else if (document.getElementById("contender2").checked) {
-        totalVictoryPoints += 2;
+        totalVictoryPoints += SECOND_PLACE_AWARD_VP;
     }
 
     if (document.getElementById("winner3").checked) {
         totalVictoryPoints += FIRST_PLACE_AWARD_VP;
     } else if (document.getElementById("contender3").checked) {
-        totalVictoryPoints += 2;
+        totalVictoryPoints += SECOND_PLACE_AWARD_VP;
     }
 
     totalVictoryPoints += Number(document.getElementById("greeneries").value);
