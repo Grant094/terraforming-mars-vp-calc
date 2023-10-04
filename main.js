@@ -38,7 +38,9 @@ function clearAwardSelection(awardToClear) {
     } else if (awardToClear === 3) {
         document.getElementById('winner3').checked = false;
         document.getElementById('contender3').checked = false;
-    } 
+    }
+
+    calcVictoryPoints();
 };
 
 function addCity() {
@@ -67,4 +69,4 @@ function addCity() {
     citiesElement.appendChild(newInput);
     citiesElement.appendChild(document.createElement("br"));
     citiesElement.appendChild(document.createElement("br"));
-}
+};
