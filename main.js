@@ -36,6 +36,9 @@ function calcVictoryPoints() {
             totalVictoryPoints += Number(citiesChildren[i].value);
         }
     }
+
+    totalVictoryPoints += Number(document.getElementById("cards").value);
+
     document.getElementById("total_victory_points").innerHTML = "Total Victory Points: " + totalVictoryPoints.toString();
 };
 

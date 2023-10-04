@@ -44,6 +44,10 @@
             <div id="cities">
             </div>
             <button type="button" id="add_city" onclick="addCity()">Add City</button>
+            <br>
+            <br>
+            <label for="cards">Points from Cards: </label>
+            <input type="number" name="cards" id="cards" min="0" max="99" onblur="calcVictoryPoints()">
         </form>
         <script src="./main.js"></script>
     </body>
