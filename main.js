@@ -26,14 +26,14 @@ function calcVictoryPoints() {
     document.getElementById("total_victory_points").innerHTML = "Total Victory Points: " + totalVictoryPoints.toString();
 };
 
-function clearAwardSelection(awardCardinalNumber) {
-    if (awardCardinalNumber === 1) {
+function clearAwardSelection(awardToClear) {
+    if (awardToClear === 1) {
         document.getElementById('winner1').checked = false;
         document.getElementById('contender1').checked = false;
-    } else if (awardCardinalNumber === 2) {
+    } else if (awardToClear === 2) {
         document.getElementById('winner2').checked = false;
         document.getElementById('contender2').checked = false;
-    } else if (awardCardinalNumber === 3) {
+    } else if (awardToClear === 3) {
         document.getElementById('winner3').checked = false;
         document.getElementById('contender3').checked = false;
     } 
