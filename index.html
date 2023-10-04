@@ -9,28 +9,26 @@
         <form>
             <label for="terraform_rating">Terraform Rating: </label>
             <input type="number" name="terraform_rating" id="terraform_rating" min="0" max="999" onblur="calcVictoryPoints()">
-            <br>
-            <br>
-            <label for="milestones">Milestones: </label>
-            <input type="number" name="milestones" id="milestones" min="0" max="3" onblur="calcVictoryPoints()">
             <p>Award 1:
-                <input type="radio" name="award_1" id="winner1" value="winner1">
+                <input type="radio" name="award_1" id="winner1" value="winner1" onchange="calcVictoryPoints()">
                 <label for="winner1">1st</label>
-                <input type="radio" name="award_1" id="contender1" value="contender1">
+                <input type="radio" name="award_1" id="contender1" value="contender1" onchange="calcVictoryPoints()">
                 <label for="contender1">2nd</label>
             </p>
             <p>Award 2:
-                <input type="radio" name="award_2" id="winner2" value="winner2">
+                <input type="radio" name="award_2" id="winner2" value="winner2" onchange="calcVictoryPoints()">
                 <label for="winner2">1st</label>
-                <input type="radio" name="award_2" id="contender2" value="contender2">
+                <input type="radio" name="award_2" id="contender2" value="contender2" onchange="calcVictoryPoints()">
                 <label for="contender2">2nd</label>
             </p>
             <p>Award 3:
-                <input type="radio" name="award_3" id="winner3" value="winner3">
+                <input type="radio" name="award_3" id="winner3" value="winner3" onchange="calcVictoryPoints()">
                 <label for="winner3">1st</label>
-                <input type="radio" name="award_3" id="contender3" value="contender3">
+                <input type="radio" name="award_3" id="contender3" value="contender3" onchange="calcVictoryPoints()">
                 <label for="contender3">2nd</label>
             </p>
+            <label for="milestones">Milestones: </label>
+            <input type="number" name="milestones" id="milestones" min="0" max="3" onblur="calcVictoryPoints()">
         </form>
         <script src="./main.js"></script>
     </body>
