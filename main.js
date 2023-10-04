@@ -1,7 +1,3 @@
-function isInput(element) {
-    return element.tagName === "INPUT";
-};
-
 function calcVictoryPoints() {
     const FIRST_PLACE_AWARD_VP = 5;
     const SECOND_PLACE_AWARD_VP = 2;
