@@ -24,7 +24,15 @@ function calcVictoryPoints() {
 
     totalVictoryPoints += Number(document.getElementById("greeneries").value);
 
-    totalVictoryPoints += (Number(document.getElementById("milestones").value) * MILESTONE_VICTORY_POINTS);
+    let milestonesClaimed = document.getElementById("milestones");
+
+    if (Number(milestonesClaimed.value) > 3) {
+        milestonesClaimed.value = "3";
+    } else if (Number(milestonesClaimed.value) < 0) {
+        milestonesClaimed.value = "0";
+    }
+
+    totalVictoryPoints += ( Number(milestonesClaimed.value) * MILESTONE_VICTORY_POINTS);
 
     const citiesChildren = document.getElementById('cities').children;
     for (i = 0; i < citiesChildren.length; i++) {
