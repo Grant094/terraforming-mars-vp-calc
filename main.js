@@ -22,6 +22,8 @@ function calcVictoryPoints() {
         totalVictoryPoints += 2;
     }
 
+    totalVictoryPoints += Number(document.getElementById("greeneries").value);
+
     totalVictoryPoints += (Number(document.getElementById("milestones").value) * MILESTONE_VICTORY_POINTS);
     document.getElementById("total_victory_points").innerHTML = "Total Victory Points: " + totalVictoryPoints.toString();
 };
@@ -38,3 +40,31 @@ function clearAwardSelection(awardToClear) {
         document.getElementById('contender3').checked = false;
     } 
 };
+
+function addCity() {
+    
+    citiesElement = document.getElementById("cities");
+
+    // To keep input IDs unique, this calculates how many cities have already been added and adds 1 for the city being added.
+    // Each added city adds four elements (<label>, <input>, and 2x <br>), so the count needs to be divided by 4 to know how many cities have been added so far.
+    cityId = ((citiesElement.childElementCount / 4) + 1);
+
+    newLabel = document.createElement('label');
+    attributeId = "city_" + cityId;
+    
+    newLabel.setAttribute("for", attributeId);
+    newLabel.innerHTML = "City " + cityId.toString() + ": ";
+    
+    newInput = document.createElement('input');
+    newInput.setAttribute("type", "number");
+    newInput.setAttribute("id", attributeId);
+    newInput.setAttribute("name", attributeId);
+    newInput.setAttribute("min", "0");
+    newInput.setAttribute("max", "99");
+    newInput.setAttribute("onblur", "calcVictoryPoints()");
+
+    citiesElement.appendChild(newLabel);
+    citiesElement.appendChild(newInput);
+    citiesElement.appendChild(document.createElement("br"));
+    citiesElement.appendChild(document.createElement("br"));
+}

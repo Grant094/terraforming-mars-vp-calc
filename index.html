@@ -32,6 +32,18 @@
             </p>
             <label for="milestones">Milestones Achieved: </label>
             <input type="number" name="milestones" id="milestones" min="0" max="3" onblur="calcVictoryPoints()">
+            <br>
+            <br>
+            <label for="greeneries">Greeneries: </label>
+            <input type="number" name="greeneries" id="greeneries" min="0" max="99" onblur="calcVictoryPoints()">
+            <br>
+            <br>
+            <label for="cities">Greeneries Adjacent to Cities: </label>
+            <br>
+            <br>
+            <div id="cities">
+            </div>
+            <button type="button" id="add_city" onclick="addCity()">Add City</button>
         </form>
         <script src="./main.js"></script>
     </body>
