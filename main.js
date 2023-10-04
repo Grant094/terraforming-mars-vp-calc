@@ -1,3 +1,7 @@
+function isInput(element) {
+    return element.tagName === "INPUT";
+};
+
 function calcVictoryPoints() {
     const FIRST_PLACE_AWARD_VP = 5;
     const SECOND_PLACE_AWARD_VP = 2;
@@ -25,6 +29,13 @@ function calcVictoryPoints() {
     totalVictoryPoints += Number(document.getElementById("greeneries").value);
 
     totalVictoryPoints += (Number(document.getElementById("milestones").value) * MILESTONE_VICTORY_POINTS);
+
+    const citiesChildren = document.getElementById('cities').children;
+    for (i = 0; i < citiesChildren.length; i++) {
+        if (citiesChildren[i].tagName.toString().toLowerCase() === "input") {
+            totalVictoryPoints += Number(citiesChildren[i].value);
+        }
+    }
     document.getElementById("total_victory_points").innerHTML = "Total Victory Points: " + totalVictoryPoints.toString();
 };
 
