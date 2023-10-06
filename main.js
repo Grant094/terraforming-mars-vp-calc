@@ -28,13 +28,13 @@ function calcVictoryPoints() {
         totalVictoryPoints += SECOND_PLACE_AWARD_VP;
     }
 
-    const greeneries = document.getElementById("greeneries");
-    adjustNumberToWithinRange(greeneries, 0, 999); // 999 is placeholder maximum value
-    totalVictoryPoints += Number(greeneries.value);
-
     const milestonesClaimed = document.getElementById("milestones");
     adjustNumberToWithinRange(milestonesClaimed, 0, 3);
     totalVictoryPoints += (Number(milestonesClaimed.value) * MILESTONE_VICTORY_POINTS);
+
+    const greeneries = document.getElementById("greeneries");
+    adjustNumberToWithinRange(greeneries, 0, 999); // 999 is placeholder maximum value
+    totalVictoryPoints += Number(greeneries.value);
 
     const citiesChildren = document.getElementById('cities').children;
     for (i = 0; i < citiesChildren.length; i++) {
