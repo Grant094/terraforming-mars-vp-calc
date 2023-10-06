@@ -3,6 +3,9 @@ function calcVictoryPoints() {
     const SECOND_PLACE_AWARD_VP = 2;
     const MILESTONE_VICTORY_POINTS = 5;
     let totalVictoryPoints = 0;
+
+    allNumbersToIntegers();
+
     totalVictoryPoints += Number(document.getElementById("terraform_rating").value);
     if (document.getElementById("winner1").checked) {
         totalVictoryPoints += FIRST_PLACE_AWARD_VP;
@@ -87,4 +90,14 @@ function addCity() {
     citiesElement.appendChild(newInput);
     citiesElement.appendChild(document.createElement("br"));
     citiesElement.appendChild(document.createElement("br"));
+};
+
+function allNumbersToIntegers() {
+    allInputElements = document.querySelectorAll("input");
+    allNumberInputElements = [];
+    for (i = 0; i < allInputElements.length; i++) {
+        if (allInputElements[i].type.toLowerCase() === "number") {
+            allInputElements[i].value = Math.floor(Number(allInputElements[i].value));
+        }
+    }
 };
