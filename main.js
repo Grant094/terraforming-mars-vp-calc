@@ -2,12 +2,16 @@ function calcVictoryPoints() {
     const FIRST_PLACE_AWARD_VP = 5;
     const SECOND_PLACE_AWARD_VP = 2;
     const MILESTONE_VICTORY_POINTS = 5;
+    const MIN_INT_BESIDES_FOR_CARDS = 0; // all VP sub-totals except from cards must be positive
+    const MAX_INT = 999; // placeholder maximum integer value
+    const MAX_MILESTONES = 3; // a player cannot claim more than 3 milestones
+    const MAX_ADJACENT_GREENERIES = 6; // a city cannot have more than 6 greeneries adjacent to it
     let totalVictoryPoints = 0;
 
     allNumbersToIntegers();
 
     const terraform_rating = document.getElementById("terraform_rating");
-    adjustNumberToWithinRange(terraform_rating, 0, 999); // 999 is placeholder maximum value
+    adjustNumberToWithinRange(terraform_rating, MIN_INT_BESIDES_FOR_CARDS, MAX_INT);
     totalVictoryPoints += Number(terraform_rating.value);
 
     if (document.getElementById("winner1").checked) {
@@ -29,23 +33,23 @@ function calcVictoryPoints() {
     }
 
     const milestonesClaimed = document.getElementById("milestones");
-    adjustNumberToWithinRange(milestonesClaimed, 0, 3);
+    adjustNumberToWithinRange(milestonesClaimed, MIN_INT_BESIDES_FOR_CARDS, MAX_MILESTONES);
     totalVictoryPoints += (Number(milestonesClaimed.value) * MILESTONE_VICTORY_POINTS);
 
     const greeneries = document.getElementById("greeneries");
-    adjustNumberToWithinRange(greeneries, 0, 999); // 999 is placeholder maximum value
+    adjustNumberToWithinRange(greeneries, MIN_INT_BESIDES_FOR_CARDS, MAX_INT);
     totalVictoryPoints += Number(greeneries.value);
 
     const citiesChildren = document.getElementById('cities').children;
     for (i = 0; i < citiesChildren.length; i++) {
         const citiesChild = citiesChildren[i];
         if (citiesChild.tagName.toString().toLowerCase() === "input") {
-            adjustNumberToWithinRange(citiesChild, 0, 6);
+            adjustNumberToWithinRange(citiesChild, MIN_INT_BESIDES_FOR_CARDS, MAX_ADJACENT_GREENERIES);
             totalVictoryPoints += Number(citiesChild.value);
         }
     }
 
-    // points from cards can be anywhere from -inf to +inf, so the number does not need to be validated
+    // points from cards can be anywhere from -inf to +inf, so the number does not need to be validated within a range
     totalVictoryPoints += Number(document.getElementById("cards").value);
 
     document.getElementById("total_victory_points").innerHTML = "Total Victory Points: " + totalVictoryPoints.toString();
