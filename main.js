@@ -29,11 +29,7 @@ function calcVictoryPoints() {
 
     let milestonesClaimed = document.getElementById("milestones");
 
-    if (Number(milestonesClaimed.value) > 3) {
-        milestonesClaimed.value = "3";
-    } else if (Number(milestonesClaimed.value) < 0) {
-        milestonesClaimed.value = "0";
-    }
+    adjustNumberToWithinRange(milestonesClaimed, 0, 3);
 
     totalVictoryPoints += ( Number(milestonesClaimed.value) * MILESTONE_VICTORY_POINTS);
 
@@ -99,5 +95,13 @@ function allNumbersToIntegers() {
         if (allInputElements[i].type.toLowerCase() === "number") {
             allInputElements[i].value = Math.floor(Number(allInputElements[i].value));
         }
+    }
+};
+
+function adjustNumberToWithinRange(element, min, max) {
+    if (Number(element.value) > max) {
+        element.value = max;
+    } else if (Number(element.value) < min) {
+        element.value = min;
     }
 };
