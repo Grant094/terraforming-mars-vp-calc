@@ -6,7 +6,10 @@ function calcVictoryPoints() {
 
     allNumbersToIntegers();
 
-    totalVictoryPoints += Number(document.getElementById("terraform_rating").value);
+    const terraform_rating = document.getElementById("terraform_rating");
+    adjustNumberToWithinRange(terraform_rating, 0, 999); // 999 is placeholder maximum value
+    totalVictoryPoints += Number(terraform_rating.value);
+
     if (document.getElementById("winner1").checked) {
         totalVictoryPoints += FIRST_PLACE_AWARD_VP;
     } else if (document.getElementById("contender1").checked) {
@@ -25,21 +28,24 @@ function calcVictoryPoints() {
         totalVictoryPoints += SECOND_PLACE_AWARD_VP;
     }
 
-    totalVictoryPoints += Number(document.getElementById("greeneries").value);
+    const greeneries = document.getElementById("greeneries");
+    adjustNumberToWithinRange(greeneries, 0, 999); // 999 is placeholder maximum value
+    totalVictoryPoints += Number(greeneries.value);
 
-    let milestonesClaimed = document.getElementById("milestones");
-
+    const milestonesClaimed = document.getElementById("milestones");
     adjustNumberToWithinRange(milestonesClaimed, 0, 3);
-
-    totalVictoryPoints += ( Number(milestonesClaimed.value) * MILESTONE_VICTORY_POINTS);
+    totalVictoryPoints += (Number(milestonesClaimed.value) * MILESTONE_VICTORY_POINTS);
 
     const citiesChildren = document.getElementById('cities').children;
     for (i = 0; i < citiesChildren.length; i++) {
-        if (citiesChildren[i].tagName.toString().toLowerCase() === "input") {
-            totalVictoryPoints += Number(citiesChildren[i].value);
+        const citiesChild = citiesChildren[i];
+        if (citiesChild.tagName.toString().toLowerCase() === "input") {
+            adjustNumberToWithinRange(citiesChild, 0, 6);
+            totalVictoryPoints += Number(citiesChild.value);
         }
     }
 
+    // points from cards can be anywhere from -inf to +inf, so the number does not need to be validated
     totalVictoryPoints += Number(document.getElementById("cards").value);
 
     document.getElementById("total_victory_points").innerHTML = "Total Victory Points: " + totalVictoryPoints.toString();
