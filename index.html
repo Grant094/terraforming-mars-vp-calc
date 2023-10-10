@@ -9,6 +9,7 @@
         <table>
             <tr>
                 <th></th>
+                <th></th>
                 <th>Black</th>
                 <th>Blue</th>
                 <th>Green</th>
@@ -16,7 +17,7 @@
                 <th>Yellow</th>
             </tr>
             <tr>
-                <th>Victory Points:</th>
+                <th colspan="2">Victory Points:</th>
                 <td align="center" name="victory_points_black" id="victory_points_black">0</td>
                 <td align="center" name="victory_points_blue" id="victory_points_blue">0</td>
                 <td align="center" name="victory_points_green" id="victory_points_green">0</td>
@@ -24,7 +25,7 @@
                 <td align="center" name="victory_points_yellow" id="victory_points_yellow">0</td>
             </tr>
             <tr>
-                <th>Terraform Rating:</th>
+                <th colspan="2">Terraform Rating:</th>
                 <td><input type="number" name="terraform_rating_black" id="terraform_rating_black" min="0" max="999" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="terraform_rating_blue" id="terraform_rating_blue" min="0" max="999" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="terraform_rating_green" id="terraform_rating_green" min="0" max="999" value="0" onblur="calcVictoryPoints()"></td>
@@ -33,6 +34,7 @@
             </tr>
             <tr>
                 <th>Award 1:</th>
+                <td><button type="button" id="clear_award_1" onclick="clearAwardSelection(1)">Clear Award 1</button></td>
                 <td>
                     <input type="radio" name="award1_black" id="winner1_black" value="winner1_black" onchange="calcVictoryPoints()"><label for="winner1_black">1st</label>
                     <input type="radio" name="award1_black" id="contender1_black" value="contender1_black" onchange="calcVictoryPoints()"><label for="contender1_black">2nd</label>
@@ -56,6 +58,7 @@
             </tr>
             <tr>
                 <th>Award 2:</th>
+                <td><button type="button" id="clear_award_2" onclick="clearAwardSelection(2)">Clear Award 2</button></td>
                 <td>
                     <input type="radio" name="award2_black" id="winner2_black" value="winner2_black" onchange="calcVictoryPoints()"><label for="winner2_black">1st</label>
                     <input type="radio" name="award2_black" id="contender2_black" value="contender2_black" onchange="calcVictoryPoints()"><label for="contender2_black">2nd</label>
@@ -79,6 +82,7 @@
             </tr>
             <tr>
                 <th>Award 3:</th>
+                <td><button type="button" id="clear_award_3" onclick="clearAwardSelection(3)">Clear Award 3</button></td>
                 <td>
                     <input type="radio" name="award3_black" id="winner3_black" value="winner3_black" onchange="calcVictoryPoints()"><label for="winner3_black">1st</label>
                     <input type="radio" name="award3_black" id="contender3_black" value="contender3_black" onchange="calcVictoryPoints()"><label for="contender3_black">2nd</label>
@@ -101,7 +105,7 @@
                 </td>
             </tr>
             <tr>
-                <th>Milestones Claimed:</th>
+                <th colspan="2">Milestones Claimed:</th>
                 <td><input type="number" name="milestones_black" id="milestones_black" min="0" max="3" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="milestones_blue" id="milestones_blue" min="0" max="3" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="milestones_green" id="milestones_green" min="0" max="3" value="0" onblur="calcVictoryPoints()"></td>
@@ -109,7 +113,7 @@
                 <td><input type="number" name="milestones_yellow" id="milestones_yellow" min="0" max="3" value="0" onblur="calcVictoryPoints()"></td>
             </tr>
             <tr>
-                <th>Greeneries:</th>
+                <th colspan="2">Greeneries:</th>
                 <td><input type="number" name="greeneries_black" id="greeneries_black" min="0" max="99" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="greeneries_blue" id="greeneries_blue" min="0" max="99" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="greeneries_green" id="greeneries_green" min="0" max="99" value="0" onblur="calcVictoryPoints()"></td>
@@ -117,7 +121,7 @@
                 <td><input type="number" name="greeneries_yellow" id="greeneries_yellow" min="0" max="99" value="0" onblur="calcVictoryPoints()"></td>
             </tr>
             <tr>
-                <th>Cities with Adjacent Greeneries:</th>
+                <th colspan="2">Cities with Adjacent Greeneries:</th>
                 <td>
                     <div id="cities_black">
                     </div>
@@ -145,7 +149,7 @@
                 </td>
             </tr>
             <tr>
-                <th>Points from Cards:</th>
+                <th colspan="2">Points from Cards:</th>
                 <td><input type="number" name="cards_black" id="cards_black" min="-99" max="99" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="cards_blue" id="cards_blue" min="-99" max="99" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="cards_green" id="cards_green" min="-99" max="99" value="0" onblur="calcVictoryPoints()"></td>

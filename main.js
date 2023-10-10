@@ -67,15 +67,11 @@ function calcVictoryPoints() {
 };
 
 function clearAwardSelection(awardToClear) {
-    if (awardToClear === 1) {
-        document.getElementById('winner1').checked = false;
-        document.getElementById('contender1').checked = false;
-    } else if (awardToClear === 2) {
-        document.getElementById('winner2').checked = false;
-        document.getElementById('contender2').checked = false;
-    } else if (awardToClear === 3) {
-        document.getElementById('winner3').checked = false;
-        document.getElementById('contender3').checked = false;
+    let awardWinnerElements = document.querySelectorAll('[id*="winner' + awardToClear.toString() + '"]');
+    let awardContenderElements = document.querySelectorAll('[id*="contender' + awardToClear.toString() + '"]');
+    for (let i = 0; i < Math.max(awardWinnerElements.length, awardContenderElements.length); i++) {
+        awardWinnerElements[i].checked = false;
+        awardContenderElements[i].checked = false;
     }
 
     calcVictoryPoints();
