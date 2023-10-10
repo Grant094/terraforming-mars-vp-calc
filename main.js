@@ -20,8 +20,6 @@ function calcVictoryPoints() {
         // let elements = document.querySelectorAll('[id*=' + key + ']'); // keeping for reference should delete later
         let totalVictoryPoints = 0;
         let terraform_rating = document.getElementById("terraform_rating_" + key);
-        console.log(terraform_rating);
-        console.log(terraform_rating.value);
         adjustNumberToWithinRange(terraform_rating, MIN_INT_BESIDES_FOR_CARDS, MAX_INT);
         totalVictoryPoints += Number(terraform_rating.value);
 
