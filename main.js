@@ -17,7 +17,6 @@ function calcVictoryPoints() {
     allNumbersToIntegers();
 
     for (let [key, value] of pointsByColor) {
-        // let elements = document.querySelectorAll('[id*=' + key + ']'); // keeping for reference should delete later
         let totalVictoryPoints = 0;
         let terraform_rating = document.getElementById("terraform_rating_" + key);
         adjustNumberToWithinRange(terraform_rating, MIN_INT_BESIDES_FOR_CARDS, MAX_INT);
@@ -49,14 +48,14 @@ function calcVictoryPoints() {
         adjustNumberToWithinRange(greeneries, MIN_INT_BESIDES_FOR_CARDS, MAX_INT);
         totalVictoryPoints += Number(greeneries.value);
 
-        // const citiesChildren = document.getElementById('cities').children;
-        // for (i = 0; i < citiesChildren.length; i++) {
-        //     const citiesChild = citiesChildren[i];
-        //     if (citiesChild.tagName.toString().toLowerCase() === "input") {
-        //         adjustNumberToWithinRange(citiesChild, MIN_INT_BESIDES_FOR_CARDS, MAX_ADJACENT_GREENERIES);
-        //         totalVictoryPoints += Number(citiesChild.value);
-        //     }
-        // }
+        const citiesChildren = document.getElementById('cities' + "_" + key).children;
+        for (i = 0; i < citiesChildren.length; i++) {
+            const citiesChild = citiesChildren[i];
+            if (citiesChild.tagName.toString().toLowerCase() === "input") {
+                adjustNumberToWithinRange(citiesChild, MIN_INT_BESIDES_FOR_CARDS, MAX_ADJACENT_GREENERIES);
+                totalVictoryPoints += Number(citiesChild.value);
+            }
+        }
 
         // points from cards can be anywhere from -inf to +inf, so the number does not need to be validated within a range
         totalVictoryPoints += Number(document.getElementById("cards" + "_" + key).value);
@@ -82,19 +81,19 @@ function clearAwardSelection(awardToClear) {
     calcVictoryPoints();
 };
 
-function addCity() {
+function addCity(color) {
     
-    citiesElement = document.getElementById("cities");
+    citiesElement = document.getElementById("cities" + "_" + color);
 
     // To keep input IDs unique, this calculates how many cities have already been added and adds 1 for the city being added.
-    // Each added city adds four elements (<label>, <input>, and 2x <br>), so the count needs to be divided by 4 to know how many cities have been added so far.
-    cityId = ((citiesElement.childElementCount / 4) + 1);
+    // Each added city adds four elements (<label>, <input>, and <br>), so the count needs to be divided by 3 to know how many cities have been added so far.
+    cityId = ((citiesElement.childElementCount / 3) + 1);
+
+    attributeId = "city_" + cityId;
 
     newLabel = document.createElement('label');
-    attributeId = "city_" + cityId;
-    
     newLabel.setAttribute("for", attributeId);
-    newLabel.innerHTML = "City " + cityId.toString() + ": ";
+    newLabel.innerHTML = cityId.toString() + ": ";
     
     newInput = document.createElement('input');
     newInput.setAttribute("type", "number");
@@ -102,11 +101,11 @@ function addCity() {
     newInput.setAttribute("name", attributeId);
     newInput.setAttribute("min", "0");
     newInput.setAttribute("max", "99");
+    newInput.setAttribute("value", "0");
     newInput.setAttribute("onblur", "calcVictoryPoints()");
 
     citiesElement.appendChild(newLabel);
     citiesElement.appendChild(newInput);
-    citiesElement.appendChild(document.createElement("br"));
     citiesElement.appendChild(document.createElement("br"));
 };
 
