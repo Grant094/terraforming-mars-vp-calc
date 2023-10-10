@@ -17,19 +17,19 @@
             </tr>
             <tr>
                 <th>Victory Points:</th>
-                <td align="center">0</td>
-                <td align="center">0</td>
-                <td align="center">0</td>
-                <td align="center">0</td>
-                <td align="center">0</td>
+                <td align="center" name="victory_points_black" id="victory_points_black">0</td>
+                <td align="center" name="victory_points_blue" id="victory_points_blue">0</td>
+                <td align="center" name="victory_points_green" id="victory_points_green">0</td>
+                <td align="center" name="victory_points_red" id="victory_points_red">0</td>
+                <td align="center" name="victory_points_yellow" id="victory_points_yellow">0</td>
             </tr>
             <tr>
                 <th>Terraform Rating:</th>
                 <td><input type="number" name="terraform_rating_black" id="terraform_rating_black" min="0" max="999" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="terraform_rating_blue" id="terraform_rating_blue" min="0" max="999" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="terraform_rating_green" id="terraform_rating_green" min="0" max="999" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="terraform_rating_yellow" id="terraform_rating_yellow" min="0" max="999" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="terraform_rating_red" id="terraform_rating_red" min="0" max="999" value="0" onblur="calcVictoryPoints()"></td>
+                <td><input type="number" name="terraform_rating_yellow" id="terraform_rating_yellow" min="0" max="999" value="0" onblur="calcVictoryPoints()"></td>
             </tr>
             <tr>
                 <th>Award 1:</th>
@@ -105,16 +105,16 @@
                 <td><input type="number" name="milestones_black" id="milestones_black" min="0" max="3" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="milestones_blue" id="milestones_blue" min="0" max="3" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="milestones_green" id="milestones_green" min="0" max="3" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="milestones_yellow" id="milestones_yellow" min="0" max="3" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="milestones_red" id="milestones_red" min="0" max="3" value="0" onblur="calcVictoryPoints()"></td>
+                <td><input type="number" name="milestones_yellow" id="milestones_yellow" min="0" max="3" value="0" onblur="calcVictoryPoints()"></td>
             </tr>
             <tr>
                 <th>Greeneries:</th>
                 <td><input type="number" name="greeneries_black" id="greeneries_black" min="0" max="99" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="greeneries_blue" id="greeneries_blue" min="0" max="99" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="greeneries_green" id="greeneries_green" min="0" max="99" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="greeneries_yellow" id="greeneries_yellow" min="0" max="99" value="0" onblur="calcVictoryPoints()"></td>
                 <td><input type="number" name="greeneries_red" id="greeneries_red" min="0" max="99" value="0" onblur="calcVictoryPoints()"></td>
+                <td><input type="number" name="greeneries_yellow" id="greeneries_yellow" min="0" max="99" value="0" onblur="calcVictoryPoints()"></td>
             </tr>
             <tr>
                 <th>Cities with Adjacent Greeneries:</th>
