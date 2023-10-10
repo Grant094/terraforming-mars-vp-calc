@@ -8,51 +8,58 @@ function calcVictoryPoints() {
     const MAX_ADJACENT_GREENERIES = 6; // a city cannot have more than 6 greeneries adjacent to it
     let totalVictoryPoints = 0;
 
+    let pointsByColor = new Map();
+    pointsByColor.set("black", 0);
+    pointsByColor.set("blue", 0);
+    pointsByColor.set("green", 0);
+    pointsByColor.set("red", 0);
+    pointsByColor.set("yellow", 0);
+
     allNumbersToIntegers();
 
-    const terraform_rating = document.getElementById("terraform_rating");
-    adjustNumberToWithinRange(terraform_rating, MIN_INT_BESIDES_FOR_CARDS, MAX_INT);
-    totalVictoryPoints += Number(terraform_rating.value);
+    // const terraform_rating = document.getElementById("terraform_rating");
+    // adjustNumberToWithinRange(terraform_rating, MIN_INT_BESIDES_FOR_CARDS, MAX_INT);
+    // totalVictoryPoints += Number(terraform_rating.value);
 
-    if (document.getElementById("winner1").checked) {
-        totalVictoryPoints += FIRST_PLACE_AWARD_VP;
-    } else if (document.getElementById("contender1").checked) {
-        totalVictoryPoints += SECOND_PLACE_AWARD_VP;
-    }
+    // if (document.getElementById("winner1").checked) {
+    //     totalVictoryPoints += FIRST_PLACE_AWARD_VP;
+    // } else if (document.getElementById("contender1").checked) {
+    //     totalVictoryPoints += SECOND_PLACE_AWARD_VP;
+    // }
 
-    if (document.getElementById("winner2").checked) {
-        totalVictoryPoints += FIRST_PLACE_AWARD_VP;
-    } else if (document.getElementById("contender2").checked) {
-        totalVictoryPoints += SECOND_PLACE_AWARD_VP;
-    }
+    // if (document.getElementById("winner2").checked) {
+    //     totalVictoryPoints += FIRST_PLACE_AWARD_VP;
+    // } else if (document.getElementById("contender2").checked) {
+    //     totalVictoryPoints += SECOND_PLACE_AWARD_VP;
+    // }
 
-    if (document.getElementById("winner3").checked) {
-        totalVictoryPoints += FIRST_PLACE_AWARD_VP;
-    } else if (document.getElementById("contender3").checked) {
-        totalVictoryPoints += SECOND_PLACE_AWARD_VP;
-    }
+    // if (document.getElementById("winner3").checked) {
+    //     totalVictoryPoints += FIRST_PLACE_AWARD_VP;
+    // } else if (document.getElementById("contender3").checked) {
+    //     totalVictoryPoints += SECOND_PLACE_AWARD_VP;
+    // }
 
-    const milestonesClaimed = document.getElementById("milestones");
-    adjustNumberToWithinRange(milestonesClaimed, MIN_INT_BESIDES_FOR_CARDS, MAX_MILESTONES);
-    totalVictoryPoints += (Number(milestonesClaimed.value) * MILESTONE_VICTORY_POINTS);
+    // const milestonesClaimed = document.getElementById("milestones");
+    // adjustNumberToWithinRange(milestonesClaimed, MIN_INT_BESIDES_FOR_CARDS, MAX_MILESTONES);
+    // totalVictoryPoints += (Number(milestonesClaimed.value) * MILESTONE_VICTORY_POINTS);
 
-    const greeneries = document.getElementById("greeneries");
-    adjustNumberToWithinRange(greeneries, MIN_INT_BESIDES_FOR_CARDS, MAX_INT);
-    totalVictoryPoints += Number(greeneries.value);
+    // const greeneries = document.getElementById("greeneries");
+    // adjustNumberToWithinRange(greeneries, MIN_INT_BESIDES_FOR_CARDS, MAX_INT);
+    // totalVictoryPoints += Number(greeneries.value);
 
-    const citiesChildren = document.getElementById('cities').children;
-    for (i = 0; i < citiesChildren.length; i++) {
-        const citiesChild = citiesChildren[i];
-        if (citiesChild.tagName.toString().toLowerCase() === "input") {
-            adjustNumberToWithinRange(citiesChild, MIN_INT_BESIDES_FOR_CARDS, MAX_ADJACENT_GREENERIES);
-            totalVictoryPoints += Number(citiesChild.value);
-        }
-    }
+    // const citiesChildren = document.getElementById('cities').children;
+    // for (i = 0; i < citiesChildren.length; i++) {
+    //     const citiesChild = citiesChildren[i];
+    //     if (citiesChild.tagName.toString().toLowerCase() === "input") {
+    //         adjustNumberToWithinRange(citiesChild, MIN_INT_BESIDES_FOR_CARDS, MAX_ADJACENT_GREENERIES);
+    //         totalVictoryPoints += Number(citiesChild.value);
+    //     }
+    // }
 
-    // points from cards can be anywhere from -inf to +inf, so the number does not need to be validated within a range
-    totalVictoryPoints += Number(document.getElementById("cards").value);
+    // // points from cards can be anywhere from -inf to +inf, so the number does not need to be validated within a range
+    // totalVictoryPoints += Number(document.getElementById("cards").value);
 
-    document.getElementById("total_victory_points").innerHTML = "Total Victory Points: " + totalVictoryPoints.toString();
+    // document.getElementById("total_victory_points").innerHTML = "Total Victory Points: " + totalVictoryPoints.toString();
 };
 
 function clearAwardSelection(awardToClear) {
