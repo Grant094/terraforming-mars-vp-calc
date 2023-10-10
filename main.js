@@ -2,7 +2,7 @@ function calcVictoryPoints() {
     const FIRST_PLACE_AWARD_VP = 5;
     const SECOND_PLACE_AWARD_VP = 2;
     const MILESTONE_VICTORY_POINTS = 5;
-    const MIN_INT_BESIDES_FOR_CARDS = 0; // all VP sub-totals except from cards must be positive
+    const MIN_INT_BESIDES_FOR_CARDS = 0; // all VP sub-totals except from cards must be non-negative
     const MAX_INT = 999; // placeholder maximum integer value
     const MAX_MILESTONES = 3; // a player cannot claim more than 3 milestones
     const MAX_ADJACENT_GREENERIES = 6; // a city cannot have more than 6 greeneries adjacent to it
