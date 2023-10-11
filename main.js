@@ -66,6 +66,28 @@ function calcVictoryPoints() {
     
 };
 
+function validateAwardSelections(awardToValidate) {
+    let winnerElements = document.querySelectorAll('[id*="winner' + awardToValidate.toString() + '"]');
+    let winners = 0;
+    for (let i = 0; i < winnerElements.length; i++) {
+        if (winnerElements[i].checked) {
+            winners++;
+        }
+    }
+    if (winners > 1) {
+        clearAwardContenders(awardToValidate);
+    }
+
+    calcVictoryPoints();
+};
+
+function clearAwardContenders(awardToClear) {
+    let contenders = document.querySelectorAll('[id*="contender' + awardToClear.toString() + '"]');
+    for (let contender of contenders) {
+        contender.checked = false;
+    }
+};
+
 function clearAwardSelection(awardToClear) {
     let awardWinnerElements = document.querySelectorAll('[id*="winner' + awardToClear.toString() + '"]');
     let awardContenderElements = document.querySelectorAll('[id*="contender' + awardToClear.toString() + '"]');
