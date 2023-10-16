@@ -1,3 +1,12 @@
 # Terraforming Mars Victory Point Calculator
 
-This will be a web application written in JavaScript (JS) that will allow someone to calculate their individual victory points at the end of a game of Terraforming Mars.
+This is a HTML+JS web application that allows a users to calculate the victory points for all players in a game of [Terraforming Mars](https://www.fryxgames.se/games/terraforming-mars/).
+
+You can see a live version of this application at https://terraforming-mars-vp-calc.onrender.com/.
+
+# Quickstart
+This app only uses HTML and JavaScript, so you can run the app locally once the files are downloaded. No server or data ingestion is necessary.
+
+# Tech
+- JavaScript
+- HTML
