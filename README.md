@@ -4,6 +4,9 @@ This is a HTML+JS web application that allows a users to calculate the victory p
 
 You can see a live version of this application at https://terraforming-mars-vp-calc.onrender.com/.
 
+# Contributing
+If you are interested in contributing to this project, email grant.oxer@gmail.com.
+
 # Quickstart
 This app only uses HTML and JavaScript, so you can run the app locally once the files are downloaded. No server or data ingestion is necessary.
 
