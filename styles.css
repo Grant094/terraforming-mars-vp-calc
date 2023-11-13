@@ -22,3 +22,7 @@ col.red {
 col.yellow {
     background-color: gold;
 }
+
+.city_button {
+    width: 2em;
+}
