@@ -7,48 +7,43 @@ function calcVictoryPoints() {
     const MAX_MILESTONES = 3; // a player cannot claim more than 3 milestones
     const MAX_ADJACENT_GREENERIES = 6; // a city cannot have more than 6 greeneries adjacent to it
 
-    let pointsByColor = new Map();
-    pointsByColor.set("black", 0);
-    pointsByColor.set("blue", 0);
-    pointsByColor.set("green", 0);
-    pointsByColor.set("red", 0);
-    pointsByColor.set("yellow", 0);
+    let colors = ["black", "blue", "green", "red", "yellow"];
 
     allNumbersToIntegers();
 
-    for (let [key, value] of pointsByColor) {
+    for (let color of colors) {
         let totalVictoryPoints = 0;
-        let terraform_rating = document.getElementById("terraform_rating_" + key);
+        let terraform_rating = document.getElementById("terraform_rating_" + color);
         adjustNumberToWithinRange(terraform_rating, MIN_INT_BESIDES_FOR_CARDS, MAX_INT);
         totalVictoryPoints += Number(terraform_rating.value);
 
-        if (document.getElementById("winner1" + "_" + key).checked) {
+        if (document.getElementById("winner1" + "_" + color).checked) {
             totalVictoryPoints += FIRST_PLACE_AWARD_VP;
-        } else if (document.getElementById("contender1" + "_" + key).checked) {
+        } else if (document.getElementById("contender1" + "_" + color).checked) {
             totalVictoryPoints += SECOND_PLACE_AWARD_VP;
         }
 
-        if (document.getElementById("winner2" + "_" + key).checked) {
+        if (document.getElementById("winner2" + "_" + color).checked) {
             totalVictoryPoints += FIRST_PLACE_AWARD_VP;
-        } else if (document.getElementById("contender2_" + key).checked) {
+        } else if (document.getElementById("contender2_" + color).checked) {
             totalVictoryPoints += SECOND_PLACE_AWARD_VP;
         }
 
-        if (document.getElementById("winner3" + "_" + key).checked) {
+        if (document.getElementById("winner3" + "_" + color).checked) {
             totalVictoryPoints += FIRST_PLACE_AWARD_VP;
-        } else if (document.getElementById("contender3" + "_" + key).checked) {
+        } else if (document.getElementById("contender3" + "_" + color).checked) {
             totalVictoryPoints += SECOND_PLACE_AWARD_VP;
         }
 
-        const milestonesClaimed = document.getElementById("milestones" + "_" + key);
+        const milestonesClaimed = document.getElementById("milestones" + "_" + color);
         adjustNumberToWithinRange(milestonesClaimed, MIN_INT_BESIDES_FOR_CARDS, MAX_MILESTONES);
         totalVictoryPoints += (Number(milestonesClaimed.value) * MILESTONE_VICTORY_POINTS);
 
-        const greeneries = document.getElementById("greeneries" + "_" + key);
+        const greeneries = document.getElementById("greeneries" + "_" + color);
         adjustNumberToWithinRange(greeneries, MIN_INT_BESIDES_FOR_CARDS, MAX_INT);
         totalVictoryPoints += Number(greeneries.value);
 
-        const citiesChildren = document.getElementById('cities' + "_" + key).children;
+        const citiesChildren = document.getElementById('cities' + "_" + color).children;
         for (i = 0; i < citiesChildren.length; i++) {
             const citiesChild = citiesChildren[i];
             if (citiesChild.tagName.toString().toLowerCase() === "input") {
@@ -58,9 +53,9 @@ function calcVictoryPoints() {
         }
 
         // points from cards can be anywhere from -inf to +inf, so the number does not need to be validated within a range
-        totalVictoryPoints += Number(document.getElementById("cards" + "_" + key).value);
+        totalVictoryPoints += Number(document.getElementById("cards" + "_" + color).value);
         
-        document.getElementById("victory_points" + "_" + key).innerHTML = totalVictoryPoints.toString();
+        document.getElementById("victory_points" + "_" + color).innerHTML = totalVictoryPoints.toString();
     }
 
     
