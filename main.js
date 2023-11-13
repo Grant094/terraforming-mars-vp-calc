@@ -127,6 +127,13 @@ function addCity(color) {
     citiesElement.appendChild(document.createElement("br"));
 };
 
+function removeCity(color) {
+    citiesElement = document.getElementById("cities" + "_" + color);
+    for (let i = 0; i < 3; i++) { // each city is represented by 3 child elements, so this needs to delete the last 3 children
+        citiesElement.removeChild(citiesElement.lastChild);
+    }
+};
+
 function allNumbersToIntegers() {
     allInputElements = document.querySelectorAll("input");
     allNumberInputElements = [];
