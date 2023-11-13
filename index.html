@@ -36,99 +36,99 @@
             </tr>
             <tr>
                 <th colspan="2">Terraform Rating:</th>
-                <td><input type="number" name="terraform_rating_black" id="terraform_rating_black" min="0" max="999" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="terraform_rating_blue" id="terraform_rating_blue" min="0" max="999" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="terraform_rating_green" id="terraform_rating_green" min="0" max="999" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="terraform_rating_red" id="terraform_rating_red" min="0" max="999" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="terraform_rating_yellow" id="terraform_rating_yellow" min="0" max="999" value="0" onblur="calcVictoryPoints()"></td>
+                <td><input type="number" name="terraform_rating_black" id="terraform_rating_black" min="0" max="999" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="terraform_rating_blue" id="terraform_rating_blue" min="0" max="999" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="terraform_rating_green" id="terraform_rating_green" min="0" max="999" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="terraform_rating_red" id="terraform_rating_red" min="0" max="999" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="terraform_rating_yellow" id="terraform_rating_yellow" min="0" max="999" value="0" oninput="calcVictoryPoints()"></td>
             </tr>
             <tr>
                 <th>Award 1:</th>
                 <td><button type="button" id="clear_award_1" onclick="clearAwardSelection(1)">Clear Award 1</button></td>
                 <td>
-                    <input type="radio" name="award1_black" id="winner1_black" value="winner1_black" onchange="validateAwardSelections(1)"><label for="winner1_black">1st</label>
-                    <input type="radio" name="award1_black" id="contender1_black" value="contender1_black" onchange="validateAwardSelections(1)"><label for="contender1_black">2nd</label>
+                    <input type="radio" name="award1_black" id="winner1_black" value="winner1_black" oninput="validateAwardSelections(1)"><label for="winner1_black">1st</label>
+                    <input type="radio" name="award1_black" id="contender1_black" value="contender1_black" oninput="validateAwardSelections(1)"><label for="contender1_black">2nd</label>
                 </td>
                 <td>
-                    <input type="radio" name="award1_blue" id="winner1_blue" value="winner1_blue" onchange="validateAwardSelections(1)"><label for="winner1_blue">1st</label>
-                    <input type="radio" name="award1_blue" id="contender1_blue" value="contender1_blue" onchange="validateAwardSelections(1)"><label for="contender1_blue">2nd</label>
+                    <input type="radio" name="award1_blue" id="winner1_blue" value="winner1_blue" oninput="validateAwardSelections(1)"><label for="winner1_blue">1st</label>
+                    <input type="radio" name="award1_blue" id="contender1_blue" value="contender1_blue" oninput="validateAwardSelections(1)"><label for="contender1_blue">2nd</label>
                 </td>
                 <td>
-                    <input type="radio" name="award1_green" id="winner1_green" value="winner1_green" onchange="validateAwardSelections(1)"><label for="winner1_green">1st</label>
-                    <input type="radio" name="award1_green" id="contender1_green" value="contender1_green" onchange="validateAwardSelections(1)"><label for="contender1_green">2nd</label>
+                    <input type="radio" name="award1_green" id="winner1_green" value="winner1_green" oninput="validateAwardSelections(1)"><label for="winner1_green">1st</label>
+                    <input type="radio" name="award1_green" id="contender1_green" value="contender1_green" oninput="validateAwardSelections(1)"><label for="contender1_green">2nd</label>
                 </td>
                 <td>
-                    <input type="radio" name="award1_red" id="winner1_red" value="winner1_red" onchange="validateAwardSelections(1)"><label for="winner1_red">1st</label>
-                    <input type="radio" name="award1_red" id="contender1_red" value="contender1_red" onchange="validateAwardSelections(1)"><label for="contender1_red">2nd</label>
+                    <input type="radio" name="award1_red" id="winner1_red" value="winner1_red" oninput="validateAwardSelections(1)"><label for="winner1_red">1st</label>
+                    <input type="radio" name="award1_red" id="contender1_red" value="contender1_red" oninput="validateAwardSelections(1)"><label for="contender1_red">2nd</label>
                 </td>
                 <td>
-                    <input type="radio" name="award1_yellow" id="winner1_yellow" value="winner1_yellow" onchange="validateAwardSelections(1)"><label for="winner1_yellow">1st</label>
-                    <input type="radio" name="award1_yellow" id="contender1_yellow" value="contender1_yellow" onchange="validateAwardSelections(1)"><label for="contender1_yellow">2nd</label>
+                    <input type="radio" name="award1_yellow" id="winner1_yellow" value="winner1_yellow" oninput="validateAwardSelections(1)"><label for="winner1_yellow">1st</label>
+                    <input type="radio" name="award1_yellow" id="contender1_yellow" value="contender1_yellow" oninput="validateAwardSelections(1)"><label for="contender1_yellow">2nd</label>
                 </td>
             </tr>
             <tr>
                 <th>Award 2:</th>
                 <td><button type="button" id="clear_award_2" onclick="clearAwardSelection(2)">Clear Award 2</button></td>
                 <td>
-                    <input type="radio" name="award2_black" id="winner2_black" value="winner2_black" onchange="validateAwardSelections(2)"><label for="winner2_black">1st</label>
-                    <input type="radio" name="award2_black" id="contender2_black" value="contender2_black" onchange="validateAwardSelections(2)"><label for="contender2_black">2nd</label>
+                    <input type="radio" name="award2_black" id="winner2_black" value="winner2_black" oninput="validateAwardSelections(2)"><label for="winner2_black">1st</label>
+                    <input type="radio" name="award2_black" id="contender2_black" value="contender2_black" oninput="validateAwardSelections(2)"><label for="contender2_black">2nd</label>
                 </td>
                 <td>
-                    <input type="radio" name="award2_blue" id="winner2_blue" value="winner2_blue" onchange="validateAwardSelections(2)"><label for="winner2_blue">1st</label>
-                    <input type="radio" name="award2_blue" id="contender2_blue" value="contender2_blue" onchange="validateAwardSelections(2)"><label for="contender2_blue">2nd</label>
+                    <input type="radio" name="award2_blue" id="winner2_blue" value="winner2_blue" oninput="validateAwardSelections(2)"><label for="winner2_blue">1st</label>
+                    <input type="radio" name="award2_blue" id="contender2_blue" value="contender2_blue" oninput="validateAwardSelections(2)"><label for="contender2_blue">2nd</label>
                 </td>
                 <td>
-                    <input type="radio" name="award2_green" id="winner2_green" value="winner2_green" onchange="validateAwardSelections(2)"><label for="winner2_green">1st</label>
-                    <input type="radio" name="award2_green" id="contender2_green" value="contender2_green" onchange="validateAwardSelections(2)"><label for="contender2_green">2nd</label>
+                    <input type="radio" name="award2_green" id="winner2_green" value="winner2_green" oninput="validateAwardSelections(2)"><label for="winner2_green">1st</label>
+                    <input type="radio" name="award2_green" id="contender2_green" value="contender2_green" oninput="validateAwardSelections(2)"><label for="contender2_green">2nd</label>
                 </td>
                 <td>
-                    <input type="radio" name="award2_red" id="winner2_red" value="winner2_red" onchange="validateAwardSelections(2)"><label for="winner2_red">1st</label>
-                    <input type="radio" name="award2_red" id="contender2_red" value="contender2_red" onchange="validateAwardSelections(2)"><label for="contender2_red">2nd</label>
+                    <input type="radio" name="award2_red" id="winner2_red" value="winner2_red" oninput="validateAwardSelections(2)"><label for="winner2_red">1st</label>
+                    <input type="radio" name="award2_red" id="contender2_red" value="contender2_red" oninput="validateAwardSelections(2)"><label for="contender2_red">2nd</label>
                 </td>
                 <td>
-                    <input type="radio" name="award2_yellow" id="winner2_yellow" value="winner2_yellow" onchange="validateAwardSelections(2)"><label for="winner2_yellow">1st</label>
-                    <input type="radio" name="award2_yellow" id="contender2_yellow" value="contender2_yellow" onchange="validateAwardSelections(2)"><label for="contender2_yellow">2nd</label>
+                    <input type="radio" name="award2_yellow" id="winner2_yellow" value="winner2_yellow" oninput="validateAwardSelections(2)"><label for="winner2_yellow">1st</label>
+                    <input type="radio" name="award2_yellow" id="contender2_yellow" value="contender2_yellow" oninput="validateAwardSelections(2)"><label for="contender2_yellow">2nd</label>
                 </td>
             </tr>
             <tr>
                 <th>Award 3:</th>
                 <td><button type="button" id="clear_award_3" onclick="clearAwardSelection(3)">Clear Award 3</button></td>
                 <td>
-                    <input type="radio" name="award3_black" id="winner3_black" value="winner3_black" onchange="validateAwardSelections(3)"><label for="winner3_black">1st</label>
-                    <input type="radio" name="award3_black" id="contender3_black" value="contender3_black" onchange="validateAwardSelections(3)"><label for="contender3_black">2nd</label>
+                    <input type="radio" name="award3_black" id="winner3_black" value="winner3_black" oninput="validateAwardSelections(3)"><label for="winner3_black">1st</label>
+                    <input type="radio" name="award3_black" id="contender3_black" value="contender3_black" oninput="validateAwardSelections(3)"><label for="contender3_black">2nd</label>
                 </td>
                 <td>
-                    <input type="radio" name="award3_blue" id="winner3_blue" value="winner3_blue" onchange="validateAwardSelections(3)"><label for="winner3_blue">1st</label>
-                    <input type="radio" name="award3_blue" id="contender3_blue" value="contender3_blue" onchange="validateAwardSelections(3)"><label for="contender3_blue">2nd</label>
+                    <input type="radio" name="award3_blue" id="winner3_blue" value="winner3_blue" oninput="validateAwardSelections(3)"><label for="winner3_blue">1st</label>
+                    <input type="radio" name="award3_blue" id="contender3_blue" value="contender3_blue" oninput="validateAwardSelections(3)"><label for="contender3_blue">2nd</label>
                 </td>
                 <td>
-                    <input type="radio" name="award3_green" id="winner3_green" value="winner3_green" onchange="validateAwardSelections(3)"><label for="winner3_green">1st</label>
-                    <input type="radio" name="award3_green" id="contender3_green" value="contender3_green" onchange="validateAwardSelections(3)"><label for="contender3_green">2nd</label>
+                    <input type="radio" name="award3_green" id="winner3_green" value="winner3_green" oninput="validateAwardSelections(3)"><label for="winner3_green">1st</label>
+                    <input type="radio" name="award3_green" id="contender3_green" value="contender3_green" oninput="validateAwardSelections(3)"><label for="contender3_green">2nd</label>
                 </td>
                 <td>
-                    <input type="radio" name="award3_red" id="winner3_red" value="winner3_red" onchange="validateAwardSelections(3)"><label for="winner3_red">1st</label>
-                    <input type="radio" name="award3_red" id="contender3_red" value="contender3_red" onchange="validateAwardSelections(3)"><label for="contender3_red">2nd</label>
+                    <input type="radio" name="award3_red" id="winner3_red" value="winner3_red" oninput="validateAwardSelections(3)"><label for="winner3_red">1st</label>
+                    <input type="radio" name="award3_red" id="contender3_red" value="contender3_red" oninput="validateAwardSelections(3)"><label for="contender3_red">2nd</label>
                 </td>
                 <td>
-                    <input type="radio" name="award3_yellow" id="winner3_yellow" value="winner3_yellow" onchange="validateAwardSelections(3)"><label for="winner3_yellow">1st</label>
-                    <input type="radio" name="award3_yellow" id="contender3_yellow" value="contender3_yellow" onchange="validateAwardSelections(3)"><label for="contender3_yellow">2nd</label>
+                    <input type="radio" name="award3_yellow" id="winner3_yellow" value="winner3_yellow" oninput="validateAwardSelections(3)"><label for="winner3_yellow">1st</label>
+                    <input type="radio" name="award3_yellow" id="contender3_yellow" value="contender3_yellow" oninput="validateAwardSelections(3)"><label for="contender3_yellow">2nd</label>
                 </td>
             </tr>
             <tr>
                 <th colspan="2">Milestones Claimed:</th>
-                <td><input type="number" name="milestones_black" id="milestones_black" min="0" max="3" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="milestones_blue" id="milestones_blue" min="0" max="3" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="milestones_green" id="milestones_green" min="0" max="3" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="milestones_red" id="milestones_red" min="0" max="3" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="milestones_yellow" id="milestones_yellow" min="0" max="3" value="0" onblur="calcVictoryPoints()"></td>
+                <td><input type="number" name="milestones_black" id="milestones_black" min="0" max="3" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="milestones_blue" id="milestones_blue" min="0" max="3" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="milestones_green" id="milestones_green" min="0" max="3" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="milestones_red" id="milestones_red" min="0" max="3" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="milestones_yellow" id="milestones_yellow" min="0" max="3" value="0" oninput="calcVictoryPoints()"></td>
             </tr>
             <tr>
                 <th colspan="2">Greeneries:</th>
-                <td><input type="number" name="greeneries_black" id="greeneries_black" min="0" max="99" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="greeneries_blue" id="greeneries_blue" min="0" max="99" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="greeneries_green" id="greeneries_green" min="0" max="99" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="greeneries_red" id="greeneries_red" min="0" max="99" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="greeneries_yellow" id="greeneries_yellow" min="0" max="99" value="0" onblur="calcVictoryPoints()"></td>
+                <td><input type="number" name="greeneries_black" id="greeneries_black" min="0" max="99" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="greeneries_blue" id="greeneries_blue" min="0" max="99" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="greeneries_green" id="greeneries_green" min="0" max="99" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="greeneries_red" id="greeneries_red" min="0" max="99" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="greeneries_yellow" id="greeneries_yellow" min="0" max="99" value="0" oninput="calcVictoryPoints()"></td>
             </tr>
             <tr>
                 <th colspan="2">Cities with<br>Adjacent Greeneries:</th>
@@ -160,11 +160,11 @@
             </tr>
             <tr>
                 <th colspan="2">Points from Cards:</th>
-                <td><input type="number" name="cards_black" id="cards_black" min="-99" max="99" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="cards_blue" id="cards_blue" min="-99" max="99" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="cards_green" id="cards_green" min="-99" max="99" value="0" onblur="calcVictoryPoints()"></td>
-                <td><input type="number" name="cards_red" id="cards_red" min="-99" max="99" value="0" onblur="calcVictoryPoints()"></td>.
-                <td><input type="number" name="cards_yellow" id="cards_yellow" min="-99" max="99" value="0" onblur="calcVictoryPoints()"></td>
+                <td><input type="number" name="cards_black" id="cards_black" min="-99" max="99" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="cards_blue" id="cards_blue" min="-99" max="99" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="cards_green" id="cards_green" min="-99" max="99" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="cards_red" id="cards_red" min="-99" max="99" value="0" oninput="calcVictoryPoints()"></td>.
+                <td><input type="number" name="cards_yellow" id="cards_yellow" min="-99" max="99" value="0" oninput="calcVictoryPoints()"></td>
             </tr>
         </table>
         <br>

@@ -120,7 +120,7 @@ function addCity(color) {
     newInput.setAttribute("min", "0");
     newInput.setAttribute("max", "6");
     newInput.setAttribute("value", "0");
-    newInput.setAttribute("onblur", "calcVictoryPoints()");
+    newInput.setAttribute("oninput", "calcVictoryPoints()");
 
     citiesElement.appendChild(newLabel);
     citiesElement.appendChild(newInput);
