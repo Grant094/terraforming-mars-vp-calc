@@ -131,7 +131,6 @@ function removeCity(color) {
 
 function allNumbersToIntegers() {
     allInputElements = document.querySelectorAll("input");
-    allNumberInputElements = [];
     for (i = 0; i < allInputElements.length; i++) {
         currentInputElement = allInputElements[i];
         if (currentInputElement.type.toLowerCase() === "number" && currentInputElement.value !== "") {
