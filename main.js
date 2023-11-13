@@ -104,7 +104,7 @@ function addCity(color) {
     citiesElement = document.getElementById("cities" + "_" + color);
 
     // To keep input IDs unique, this calculates how many cities have already been added and adds 1 for the city being added.
-    // Each added city adds four elements (<label>, <input>, and <br>), so the count needs to be divided by 3 to know how many cities have been added so far.
+    // Each added city adds three elements (<label>, <input>, and <br>), so the count needs to be divided by 3 to know how many cities have been added so far.
     cityId = ((citiesElement.childElementCount / 3) + 1);
 
     attributeId = "city_" + cityId;
