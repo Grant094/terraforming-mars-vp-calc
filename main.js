@@ -118,7 +118,7 @@ function addCity(color) {
     newInput.setAttribute("id", attributeId);
     newInput.setAttribute("name", attributeId);
     newInput.setAttribute("min", "0");
-    newInput.setAttribute("max", "99");
+    newInput.setAttribute("max", "6");
     newInput.setAttribute("value", "0");
     newInput.setAttribute("onblur", "calcVictoryPoints()");
 
