@@ -131,8 +131,9 @@ function allNumbersToIntegers() {
     allInputElements = document.querySelectorAll("input");
     allNumberInputElements = [];
     for (i = 0; i < allInputElements.length; i++) {
-        if (allInputElements[i].type.toLowerCase() === "number") {
-            allInputElements[i].value = Math.floor(Number(allInputElements[i].value));
+        currentInputElement = allInputElements[i];
+        if (currentInputElement.type.toLowerCase() === "number" && currentInputElement.value !== "") {
+            currentInputElement.value = Math.floor(Number(currentInputElement.value));
         }
     }
 };
