@@ -66,13 +66,14 @@ function crownWinner() {
     let winningPointsTotal = 0;
     let winningColors = [];
     for (let i = 0; i < victoryPointElements.length; i++) {
-        valueI = victoryPointElements[i].innerHTML;
-        colorI = victoryPointElements[i].id.split("_")[2];
-        if (valueI > winningPointsTotal) {
-            winningPointsTotal = valueI;
+        elementI = victoryPointElements[i];
+        pointsI = Number(elementI.innerHTML);
+        colorI = elementI.id.split("_")[2];
+        if (pointsI > winningPointsTotal) {
+            winningPointsTotal = pointsI;
             winningColors.length = 0;
             winningColors.push(colorI);
-        } else if (valueI === winningPointsTotal) {
+        } else if (pointsI === winningPointsTotal) {
             winningColors.push(colorI);
         }
     }
@@ -89,7 +90,7 @@ function crownWinner() {
             }
         }
         for (k = 0; k < winnersMegacreditsTotalsElements.length; k++) {
-            megacreditsK = winnersMegacreditsTotalsElements[k].value;
+            megacreditsK = Number(winnersMegacreditsTotalsElements[k].value);
             colorK = winnersMegacreditsTotalsElements[k].id.split("_")[1];
             if (megacreditsK > winningMegacredits) {
                 winningMegacredits = megacreditsK;
