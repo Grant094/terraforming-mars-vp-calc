@@ -100,8 +100,6 @@ function crownWinner() {
         }
     }
 
-    console.log(winningColors);
-
     let crownElements = document.querySelectorAll('[id*="crown_"');
     for (b = 0; b < crownElements.length; b++) {
         crownElements[b].innerHTML = "L";
