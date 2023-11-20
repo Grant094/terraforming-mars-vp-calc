@@ -20,27 +20,36 @@
             <tr>
                 <th></th>
                 <th></th>
-                <th><input class="player_name" value="Black" size="8"></th>
-                <th><input class="player_name" value="Blue" size="8"></th>
-                <th><input class="player_name" value="Green" size="8"></th>
-                <th><input class="player_name" value="Red" size="8"></th>
-                <th><input class="player_name" value="Yellow" size="8"></th>
+                <th id="crown_black"> </th>
+                <th id="crown_blue"> </th>
+                <th id="crown_green"> </th>
+                <th id="crown_red"> </th>
+                <th id="crown_yellow"> </th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th><input class="player_name" value="Black" size="8" id="player_black"></th>
+                <th><input class="player_name" value="Blue" size="8" id="player_blue"></th>
+                <th><input class="player_name" value="Green" size="8" id="player_green"></th>
+                <th><input class="player_name" value="Red" size="8" id="player_red"></th>
+                <th><input class="player_name" value="Yellow" size="8" id="player_yellow"></th>
             </tr>
             <tr>
                 <th colspan="2">Victory Points:</th>
-                <td align="center" name="victory_points_black" id="victory_points_black">0</td>
-                <td align="center" name="victory_points_blue" id="victory_points_blue">0</td>
-                <td align="center" name="victory_points_green" id="victory_points_green">0</td>
-                <td align="center" name="victory_points_red" id="victory_points_red">0</td>
-                <td align="center" name="victory_points_yellow" id="victory_points_yellow">0</td>
+                <td align="center" name="victory_points_black" id="victory_points_black" class="victory_points">0</td>
+                <td align="center" name="victory_points_blue" id="victory_points_blue" class="victory_points">0</td>
+                <td align="center" name="victory_points_green" id="victory_points_green" class="victory_points">0</td>
+                <td align="center" name="victory_points_red" id="victory_points_red" class="victory_points">0</td>
+                <td align="center" name="victory_points_yellow" id="victory_points_yellow" class="victory_points">0</td>
             </tr>
             <tr>
                 <th colspan="2">MegaCredits:</th>
-                <td><input type="number" name="megacredits_black" id="megacredits_black" min="0" max="999" step="1" value="0"></td>
-                <td><input type="number" name="megacredits_blue" id="megacredits_blue" min="0" max="999" value="0"></td>
-                <td><input type="number" name="megacredits_green" id="megacredits_green" min="0" max="999" value="0"></td>
-                <td><input type="number" name="megacredits_red" id="megacredits_red" min="0" max="999" value="0"></td>
-                <td><input type="number" name="megacredits_yellow" id="megacredits_yellow" min="0" max="999" value="0"></td>
+                <td><input type="number" name="megacredits_black" id="megacredits_black" class="megacredits" min="0" max="999" step="1" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="megacredits_blue" id="megacredits_blue" class="megacredits" min="0" max="999" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="megacredits_green" id="megacredits_green" class="megacredits" min="0" max="999" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="megacredits_red" id="megacredits_red" class="megacredits" min="0" max="999" value="0" oninput="calcVictoryPoints()"></td>
+                <td><input type="number" name="megacredits_yellow" id="megacredits_yellow" class="megacredits" min="0" max="999" value="0" oninput="calcVictoryPoints()"></td>
             </tr>
             <tr>
                 <th colspan="2">Terraform Rating:</th>

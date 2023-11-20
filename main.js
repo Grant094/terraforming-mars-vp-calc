@@ -58,7 +58,58 @@ function calcVictoryPoints() {
         document.getElementById("victory_points" + "_" + color).innerHTML = totalVictoryPoints.toString();
     }
 
-    
+    crownWinner();
+};
+
+function crownWinner() {
+    let victoryPointElements = document.querySelectorAll('[id*="victory_points_"');
+    let winningPointsTotal = 0;
+    let winningColors = [];
+    for (let i = 0; i < victoryPointElements.length; i++) {
+        elementI = victoryPointElements[i];
+        pointsI = Number(elementI.innerHTML);
+        colorI = elementI.id.split("_")[2];
+        if (pointsI > winningPointsTotal) {
+            winningPointsTotal = pointsI;
+            winningColors.length = 0;
+            winningColors.push(colorI);
+        } else if (pointsI === winningPointsTotal) {
+            winningColors.push(colorI);
+        }
+    }
+
+    if (winningColors.length > 1) {
+        let megacreditsTotalsElements = document.querySelectorAll('[id*="megacredits_"');
+        let winnersMegacreditsTotalsElements = [];
+        let winningMegacredits = 0;
+        for (j = 0; j < megacreditsTotalsElements.length; j++) {
+            elementJ = megacreditsTotalsElements[j];
+            colorJ = megacreditsTotalsElements[j].id.split("_")[1];
+            if (winningColors.includes(colorJ)) {
+                winnersMegacreditsTotalsElements.push(elementJ);
+            }
+        }
+        for (k = 0; k < winnersMegacreditsTotalsElements.length; k++) {
+            megacreditsK = Number(winnersMegacreditsTotalsElements[k].value);
+            colorK = winnersMegacreditsTotalsElements[k].id.split("_")[1];
+            if (megacreditsK > winningMegacredits) {
+                winningMegacredits = megacreditsK;
+                winningColors.length = 0;
+                winningColors.push(colorK);
+            } else if (megacreditsK === winningMegacredits) {
+                winningColors.push(colorK);
+            }
+        }
+    }
+
+    let crownElements = document.querySelectorAll('[id*="crown_"');
+    for (b = 0; b < crownElements.length; b++) {
+        crownElements[b].innerHTML = " ";
+    }
+
+    for (a = 0; a < winningColors.length; a++) {
+        document.getElementById(`crown_${winningColors[a]}`).innerHTML = "W";
+    }
 };
 
 function validateAwardSelections(awardToValidate) {
