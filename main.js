@@ -92,6 +92,7 @@ function crownWinner() {
             megacreditsK = winnersMegacreditsTotalsElements[k].value;
             colorK = winnersMegacreditsTotalsElements[k].id.split("_")[1];
             if (megacreditsK > winningMegacredits) {
+                winningMegacredits = megacreditsK;
                 winningColors.length = 0;
                 winningColors.push(colorK);
             } else if (megacreditsK === winningMegacredits) {
@@ -102,7 +103,7 @@ function crownWinner() {
 
     let crownElements = document.querySelectorAll('[id*="crown_"');
     for (b = 0; b < crownElements.length; b++) {
-        crownElements[b].innerHTML = "L";
+        crownElements[b].innerHTML = " ";
     }
 
     for (a = 0; a < winningColors.length; a++) {
