@@ -12,6 +12,8 @@ function calcVictoryPoints() {
     allNumbersToIntegers();
 
     for (let color of colors) {
+        let megacredits = document.getElementById(`megacredits_${color}`);
+        adjustNumberToWithinRange(megacredits, MIN_INT_BESIDES_FOR_CARDS, MAX_INT);
         let totalVictoryPoints = 0;
         let terraform_rating = document.getElementById("terraform_rating_" + color);
         adjustNumberToWithinRange(terraform_rating, MIN_INT_BESIDES_FOR_CARDS, MAX_INT);
