@@ -64,47 +64,7 @@ function calcVictoryPoints() {
 };
 
 function crownWinner() {
-    let victoryPointElements = document.querySelectorAll('[id*="victory_points_"');
-    let winningVictoryPoints = 0;
-    let winningColors = [];
-    for (let element of victoryPointElements) {
-        let victoryPoints = Number(element.innerHTML);
-        let color = element.id.split("_")[2];
-        if (victoryPoints > winningVictoryPoints) {
-            winningVictoryPoints = victoryPoints;
-            winningColors.length = 0;
-            winningColors.push(color);
-        } else if (victoryPoints === winningVictoryPoints) {
-            winningColors.push(color);
-        }
-    }
-
-    if (winningColors.length > 1) {
-        let allMegacreditsElements = document.querySelectorAll('[id*="megacredits_"');
-        let pointsWinnersMegacreditsElements = [];
-        let winningMegacredits = 0;
-
-        for (let element of allMegacreditsElements) {
-            let color = element.id.split("_")[1];
-            if (winningColors.includes(color)) {
-                pointsWinnersMegacreditsElements.push(element);
-            }
-        }
-
-        winningColors.length = 0;
-
-        for (let element of pointsWinnersMegacreditsElements) {
-            megacredits = Number(element.value);
-            color = element.id.split("_")[1];
-            if (megacredits > winningMegacredits) {
-                winningMegacredits = megacredits;
-                winningColors.length = 0;
-                winningColors.push(color);
-            } else if (megacredits === winningMegacredits) {
-                winningColors.push(color);
-            }
-        }
-    }
+    let winningColors = highestOfResource("megacredits_", highestOfResource("victory_points_"));
 
     // empty all crown cells before crowning one or more winners
     for (let element of document.querySelectorAll('[id*="crown_"')) {
@@ -200,4 +160,35 @@ function adjustNumberToWithinRange(element, min, max) {
     } else if (Number(element.value) < min) {
         element.value = min;
     }
+};
+
+function highestOfResource(resourceSelector, existingWinners = ["black", "blue", "green", "yellow", "red"]) {
+    let elements = document.querySelectorAll(`[id*="${resourceSelector}"`);
+    let winningAmount = 0;
+    let winningColors = [];
+    
+    for (let element of elements) {
+        let amount = 0;
+
+        if (resourceSelector === "victory_points_") {
+            amount = Number(element.innerHTML);
+        } else if (resourceSelector === "megacredits_") {
+            amount = Number(element.value);
+        }
+
+        let color = element.id.split("_").pop();
+        if (!(existingWinners.includes(color))) {
+            continue;
+        }
+
+        if (amount > winningAmount) {
+            winningAmount = amount;
+            winningColors = [];
+            winningColors.push(color);
+        } else if (amount === winningAmount) {
+            winningColors.push(color);
+        }
+    }
+    
+    return winningColors;
 };
