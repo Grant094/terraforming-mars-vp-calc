@@ -194,20 +194,27 @@ function highestOfResource(resourceSelector, existingWinners = ["black", "blue",
 };
 
 function hideColor(color) {
+    for (let element of document.querySelectorAll(`[id*="_${color}"]`)) {
+        element.style.width = '1em';
+        element.style.height = '1em';
+        if (element.tagName.toLowerCase() === "td" && !(element.getAttribute("name").toString().includes("victory_points_"))) {
+            continue;
+        } else if (element.tagName.toLowerCase() === "th" ||
+            element.tagName.toLowerCase() === "td" && element.getAttribute("name").toString().includes("victory_points_")) {
+            element.innerHTML = "";
+        } else {
+            element.style.visibility = 'hidden';
+        }
+    }
+
     let showButton = document.createElement('button');
     showButton.setAttribute("type", "button");
     showButton.setAttribute("id", `show_${color}`);
     showButton.setAttribute("class", "show_color");
     showButton.setAttribute("onclick", `showColor('${color}')`);
     showButton.innerHTML = "+";
-
-    let elementsWhoseContentToHide = document.querySelectorAll(`[id*="_${color}"]`);
-    // TODO need to filter out <td> cells
-    for (let element of elementsWhoseContentToHide) {
-        element.style.visibility = 'hidden';
-    }
-
-    document.getElementById(`show_${color}`).style.visibility = 'visible';
+    
+    document.getElementById(`playerCell_${color}`).appendChild(showButton);
 };
 
 function showColor(color) {
