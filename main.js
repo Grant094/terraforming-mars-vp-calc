@@ -192,3 +192,15 @@ function highestOfResource(resourceSelector, existingWinners = ["black", "blue",
     
     return winningColors;
 };
+
+function hideColor(color) {
+    let elementsWhoseContentToHide = document.querySelectorAll(`[id*="_${color}"]`);
+    for (let element of elementsWhoseContentToHide) {
+        element.style.visibility = 'hidden';
+    }
+    
+};
+
+function showColor(color) {
+
+};
