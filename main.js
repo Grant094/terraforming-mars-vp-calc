@@ -170,6 +170,13 @@ function highestOfResource(resourceSelector, existingWinners = ["black", "blue",
     let winningColors = [];
     
     for (let element of elements) {
+        let color = element.id.split("_").pop();
+        console.log(document.getElementById(`playerCell_${color}`).querySelector(`#show_yellow`));
+        if (document.getElementById(`playerCell_${color}`).querySelector(`#show_${color}`)) {
+            // this means the relevant color has a show button, which is only added if the color is hidden
+            // and if the color has been hidden, it should be skipped
+            continue;
+        }
         let amount = 0;
 
         if (resourceSelector === "victory_points_") {
@@ -178,7 +185,7 @@ function highestOfResource(resourceSelector, existingWinners = ["black", "blue",
             amount = Number(element.value);
         }
 
-        let color = element.id.split("_").pop();
+        
         if (!(existingWinners.includes(color))) {
             continue;
         }
@@ -217,6 +224,8 @@ function hideColor(color) {
     showButton.innerHTML = "+";
     
     document.getElementById(`playerCell_${color}`).appendChild(showButton);
+
+    crownWinner();
 };
 
 function showColor(color) {
