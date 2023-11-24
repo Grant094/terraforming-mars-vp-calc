@@ -196,12 +196,14 @@ function highestOfResource(resourceSelector, existingWinners = ["black", "blue",
 function hideColor(color) {
     for (let element of document.querySelectorAll(`[id*="_${color}"]`)) {
         element.style.width = '1em';
-        element.style.height = '1em';
+        // element.style.height = '1em';
         if (element.tagName.toLowerCase() === "td" && !(element.getAttribute("name").toString().includes("victory_points_"))) {
             continue;
         } else if (element.tagName.toLowerCase() === "th" ||
             element.tagName.toLowerCase() === "td" && element.getAttribute("name").toString().includes("victory_points_")) {
             element.innerHTML = "";
+        } else if (element.id.toLowerCase().includes("winner") || element.id.toLowerCase().includes("contender")) {
+            element.style.display = 'none';
         } else {
             element.style.visibility = 'hidden';
         }
