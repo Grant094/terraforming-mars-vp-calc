@@ -26,3 +26,7 @@ col.yellow {
 .city_button {
     width: 2em;
 }
+
+td,th {
+    height: 1em;
+}

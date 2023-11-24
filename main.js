@@ -121,12 +121,14 @@ function addCity(color) {
 
     newLabel = document.createElement('label');
     newLabel.setAttribute("for", attributeId);
+    newLabel.setAttribute("class", "adjacent_greeneries");
     newLabel.innerHTML = cityId.toString() + ": ";
     
     newInput = document.createElement('input');
     newInput.setAttribute("type", "number");
     newInput.setAttribute("id", attributeId);
     newInput.setAttribute("name", attributeId);
+    newInput.setAttribute("class", "adjacent_greeneries");
     newInput.setAttribute("min", "0");
     newInput.setAttribute("max", "6");
     newInput.setAttribute("value", "0");
@@ -191,4 +193,45 @@ function highestOfResource(resourceSelector, existingWinners = ["black", "blue",
     }
     
     return winningColors;
+};
+
+function hideColor(color) {
+    for (let element of document.querySelectorAll(`[id*="_${color}"]`)) {
+        element.style.width = '1em';
+        if ((element.tagName.toLowerCase() === "td" && !(element.getAttribute("name").toString().includes("victory_points_"))) ||
+            (element.tagName.toLowerCase() === "th" && element.id.toLowerCase().includes("playercell_"))) {
+            continue;
+        } else if ((element.tagName.toLowerCase() === "th" && element.id.toLowerCase().includes("crown_")) ||
+            element.tagName.toLowerCase() === "td" && element.getAttribute("name").toString().includes("victory_points_")) {
+            element.innerHTML = "";
+        } else {
+            element.style.display = 'none';
+        }
+    }
+
+    let showButton = document.createElement('button');
+    showButton.setAttribute("type", "button");
+    showButton.setAttribute("id", `show_${color}`);
+    showButton.setAttribute("class", "show_color");
+    showButton.setAttribute("onclick", `showColor('${color}')`);
+    showButton.innerHTML = "+";
+    
+    document.getElementById(`playerCell_${color}`).appendChild(showButton);
+};
+
+function showColor(color) {
+    for (let element of document.querySelectorAll(`[id*="_${color}"]`)) {
+        element.style.width = "";
+        if (element.tagName.toLowerCase() === "td" && !(element.getAttribute("name").toString().includes("victory_points_")) ||
+            element.tagName.toLowerCase() === "th" ||
+            element.tagName.toLowerCase() === "td" && element.getAttribute("name").toString().includes("victory_points_")) {
+            continue;
+        } else {
+            element.style.display = 'inline';
+        }
+    }
+
+    document.getElementById(`show_${color}`).remove();
+
+    calcVictoryPoints();
 };
