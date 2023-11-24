@@ -194,11 +194,20 @@ function highestOfResource(resourceSelector, existingWinners = ["black", "blue",
 };
 
 function hideColor(color) {
+    let showButton = document.createElement('button');
+    showButton.setAttribute("type", "button");
+    showButton.setAttribute("id", `show_${color}`);
+    showButton.setAttribute("class", "show_color");
+    showButton.setAttribute("onclick", `showColor('${color}')`);
+    showButton.innerHTML = "+";
+
     let elementsWhoseContentToHide = document.querySelectorAll(`[id*="_${color}"]`);
+    // TODO need to filter out <td> cells
     for (let element of elementsWhoseContentToHide) {
         element.style.visibility = 'hidden';
     }
-    
+
+    document.getElementById(`show_${color}`).style.visibility = 'visible';
 };
 
 function showColor(color) {
