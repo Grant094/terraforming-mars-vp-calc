@@ -190,7 +190,6 @@ function highestOfResource(resourceSelector, existingWinners = allColors) {
     
     for (let element of elements) {
         let color = element.id.split("_").pop();
-        // console.log(document.getElementById(`playerCell_${color}`).querySelector(`#show_yellow`));
         if (document.getElementById(`playerCell_${color}`).querySelector(`#show_${color}`)) {
             // this means the relevant color has a show button, which is only added if the color is hidden
             // and if the color has been hidden, it should be skipped
