@@ -38,7 +38,26 @@ function calcVictoryPoints() {
         }
 
         const milestonesClaimed = document.getElementById("milestones" + "_" + color);
-        adjustNumberToWithinRange(milestonesClaimed, MIN_INT_BESIDES_FOR_CARDS, MAX_MILESTONES);
+
+        let milestoneElements = document.querySelectorAll("[id*='milestones_']");
+        let totalMilestonesClaimed = 0;
+        for (let element of milestoneElements) {
+            totalMilestonesClaimed += Number(element.value);
+        }
+
+        let maxMilestonesClaimableByThisColor = MAX_MILESTONES - totalMilestonesClaimed + Number(milestonesClaimed.value);
+
+        milestonesClaimed.max = maxMilestonesClaimableByThisColor;
+
+        adjustNumberToWithinRange(milestonesClaimed, MIN_INT_BESIDES_FOR_CARDS, maxMilestonesClaimableByThisColor);
+
+        // if a milestones claimed value somehow gets out of range, zero all of them
+        if (Number(milestonesClaimed.value) < 0 || Number(milestonesClaimed.value) > 3) {
+            for (let element of milestoneElements) {
+                element.value = 0;
+            }
+        }
+
         totalVictoryPoints += (Number(milestonesClaimed.value) * MILESTONE_VICTORY_POINTS);
 
         const greeneries = document.getElementById("greeneries" + "_" + color);
@@ -171,7 +190,7 @@ function highestOfResource(resourceSelector, existingWinners = allColors) {
     
     for (let element of elements) {
         let color = element.id.split("_").pop();
-        console.log(document.getElementById(`playerCell_${color}`).querySelector(`#show_yellow`));
+        // console.log(document.getElementById(`playerCell_${color}`).querySelector(`#show_yellow`));
         if (document.getElementById(`playerCell_${color}`).querySelector(`#show_${color}`)) {
             // this means the relevant color has a show button, which is only added if the color is hidden
             // and if the color has been hidden, it should be skipped
