@@ -7,11 +7,11 @@ function calcVictoryPoints() {
     const MAX_MILESTONES = 3; // a player cannot claim more than 3 milestones
     const MAX_ADJACENT_GREENERIES = 6; // a city cannot have more than 6 greeneries adjacent to it
 
-    let colors = ["black", "blue", "green", "red", "yellow"];
+    let allColors = ["black", "blue", "green", "red", "yellow"];
 
     allNumbersToIntegers();
 
-    for (let color of colors) {
+    for (let color of allColors) {
         let megacredits = document.getElementById(`megacredits_${color}`);
         adjustNumberToWithinRange(megacredits, MIN_INT_BESIDES_FOR_CARDS, MAX_INT);
         let totalVictoryPoints = 0;
