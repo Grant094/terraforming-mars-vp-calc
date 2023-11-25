@@ -1,3 +1,5 @@
+let allColors = ["black", "blue", "green", "red", "yellow"];
+
 function calcVictoryPoints() {
     const FIRST_PLACE_AWARD_VP = 5;
     const SECOND_PLACE_AWARD_VP = 2;
@@ -6,8 +8,6 @@ function calcVictoryPoints() {
     const MAX_INT = 999; // maximum value allowed in HTML file
     const MAX_MILESTONES = 3; // a player cannot claim more than 3 milestones
     const MAX_ADJACENT_GREENERIES = 6; // a city cannot have more than 6 greeneries adjacent to it
-
-    let allColors = ["black", "blue", "green", "red", "yellow"];
 
     allNumbersToIntegers();
 
@@ -164,7 +164,7 @@ function adjustNumberToWithinRange(element, min, max) {
     }
 };
 
-function highestOfResource(resourceSelector, existingWinners = ["black", "blue", "green", "yellow", "red"]) {
+function highestOfResource(resourceSelector, existingWinners = allColors) {
     let elements = document.querySelectorAll(`[id*="${resourceSelector}"]`);
     let winningAmount = 0;
     let winningColors = [];
