@@ -67,7 +67,7 @@ function crownWinner() {
     let winningColors = highestOfResource("megacredits_", highestOfResource("victory_points_"));
 
     // empty all crown cells before crowning one or more winners
-    for (let element of document.querySelectorAll('[id*="crown_"')) {
+    for (let element of document.querySelectorAll('[id*="crown_"]')) {
         element.innerHTML = "";
     }
 
@@ -165,7 +165,7 @@ function adjustNumberToWithinRange(element, min, max) {
 };
 
 function highestOfResource(resourceSelector, existingWinners = ["black", "blue", "green", "yellow", "red"]) {
-    let elements = document.querySelectorAll(`[id*="${resourceSelector}"`);
+    let elements = document.querySelectorAll(`[id*="${resourceSelector}"]`);
     let winningAmount = 0;
     let winningColors = [];
     
