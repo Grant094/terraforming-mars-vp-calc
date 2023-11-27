@@ -1,14 +1,14 @@
 let allColors = ["black", "blue", "green", "red", "yellow"];
+const FIRST_PLACE_AWARD_VP = 5;
+const SECOND_PLACE_AWARD_VP = 2;
+const MILESTONE_VICTORY_POINTS = 5;
+const STARTING_INT_EXCEPT_FOR_TERRAFORM_RATING = 0;
+const MIN_INT_BESIDES_FOR_CARDS = 0; // all VP sub-totals except from cards must be non-negative
+const MAX_INT = 999; // maximum value allowed in HTML file
+const MAX_MILESTONES = 3; // a player cannot claim more than 3 milestones
+const MAX_ADJACENT_GREENERIES = 6; // a city cannot have more than 6 greeneries adjacent to it
 
 function calcVictoryPoints() {
-    const FIRST_PLACE_AWARD_VP = 5;
-    const SECOND_PLACE_AWARD_VP = 2;
-    const MILESTONE_VICTORY_POINTS = 5;
-    const MIN_INT_BESIDES_FOR_CARDS = 0; // all VP sub-totals except from cards must be non-negative
-    const MAX_INT = 999; // maximum value allowed in HTML file
-    const MAX_MILESTONES = 3; // a player cannot claim more than 3 milestones
-    const MAX_ADJACENT_GREENERIES = 6; // a city cannot have more than 6 greeneries adjacent to it
-
     allNumbersToIntegers();
 
     for (let color of allColors) {
@@ -145,9 +145,9 @@ function addCity(color) {
     newInput.setAttribute("id", attributeId);
     newInput.setAttribute("name", attributeId);
     newInput.setAttribute("class", "adjacent_greeneries");
-    newInput.setAttribute("min", "0");
-    newInput.setAttribute("max", "6");
-    newInput.setAttribute("value", "0");
+    newInput.setAttribute("min", MIN_INT_BESIDES_FOR_CARDS);
+    newInput.setAttribute("max", MAX_ADJACENT_GREENERIES);
+    newInput.setAttribute("value", STARTING_INT_EXCEPT_FOR_TERRAFORM_RATING);
     newInput.setAttribute("oninput", "calcVictoryPoints()");
 
     citiesElement.appendChild(newLabel);
