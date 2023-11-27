@@ -37,27 +37,24 @@ function calcVictoryPoints() {
             totalVictoryPoints += SECOND_PLACE_AWARD_VP;
         }
 
-        let milestonesClaimed = document.getElementById("milestones" + "_" + color);
-
+        // bring a out-of-range input back in-range
         let milestoneElements = document.querySelectorAll("[id*='milestones_']");
+        for (let element of milestoneElements) {
+            adjustNumberToWithinRange(element, element.min, element.max);
+        }
+
         let totalMilestonesClaimed = 0;
         for (let element of milestoneElements) {
             totalMilestonesClaimed += Number(element.value);
         }
 
-        let maxMilestonesClaimableByThisColor = MAX_MILESTONES - totalMilestonesClaimed + Number(milestonesClaimed.value);
-
-        milestonesClaimed.max = maxMilestonesClaimableByThisColor;
-
-        adjustNumberToWithinRange(milestonesClaimed, MIN_INT_BESIDES_FOR_CARDS, maxMilestonesClaimableByThisColor);
-
-        // if the number of milestones claimed gets out of range, zero all milestones claimed fields
-        if (Number(milestonesClaimed.value) < 0 || Number(milestonesClaimed.value) > 3) {
-            for (let element of milestoneElements) {
-                element.value = 0;
-            }
+        // set the max of each milestone field to the max that player can claim based on the number of claimed milestones
+        for (let element of milestoneElements) {
+            element.max = MAX_MILESTONES - totalMilestonesClaimed + Number(element.value);
         }
 
+        // add this player's milestones VP to their total VP
+        let milestonesClaimed = document.getElementById("milestones" + "_" + color);
         totalVictoryPoints += (Number(milestonesClaimed.value) * MILESTONE_VICTORY_POINTS);
 
         const greeneries = document.getElementById("greeneries" + "_" + color);
