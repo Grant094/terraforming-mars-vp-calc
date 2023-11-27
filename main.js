@@ -51,7 +51,7 @@ function calcVictoryPoints() {
 
         adjustNumberToWithinRange(milestonesClaimed, MIN_INT_BESIDES_FOR_CARDS, maxMilestonesClaimableByThisColor);
 
-        // if a milestones claimed value somehow gets out of range, zero all of them
+        // if the number of milestones claimed gets out of range, zero all milestones claimed fields
         if (Number(milestonesClaimed.value) < 0 || Number(milestonesClaimed.value) > 3) {
             for (let element of milestoneElements) {
                 element.value = 0;
