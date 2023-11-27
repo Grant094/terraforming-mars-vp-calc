@@ -190,7 +190,7 @@ function highestOfResource(resourceSelector, existingWinners = allColors) {
     
     for (let element of elements) {
         let color = element.id.split("_").pop();
-        if (document.getElementById(`playerCell_${color}`).querySelector(`#show_${color}`)) {
+        if (document.getElementById(`player_cell_${color}`).querySelector(`#show_${color}`)) {
             // this means the relevant color has a show button, which is only added if the color is hidden
             // and if the color has been hidden, it should be skipped
             continue;
@@ -224,7 +224,7 @@ function hideColor(color) {
     for (let element of document.querySelectorAll(`[id*="_${color}"]`)) {
         element.style.width = '1em';
         if ((element.tagName.toLowerCase() === "td" && !(element.getAttribute("name").toString().includes("victory_points_"))) ||
-            (element.tagName.toLowerCase() === "th" && element.id.toLowerCase().includes("playercell_"))) {
+            (element.tagName.toLowerCase() === "th" && element.id.toLowerCase().includes("player_cell_"))) {
             continue;
         } else if ((element.tagName.toLowerCase() === "th" && element.id.toLowerCase().includes("crown_")) ||
             element.tagName.toLowerCase() === "td" && element.getAttribute("name").toString().includes("victory_points_")) {
@@ -241,7 +241,7 @@ function hideColor(color) {
     showButton.setAttribute("onclick", `showColor('${color}')`);
     showButton.innerHTML = "+";
     
-    document.getElementById(`playerCell_${color}`).appendChild(showButton);
+    document.getElementById(`player_cell_${color}`).appendChild(showButton);
 
     crownWinner();
 };
