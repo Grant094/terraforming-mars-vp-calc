@@ -37,7 +37,7 @@ function calcVictoryPoints() {
             totalVictoryPoints += SECOND_PLACE_AWARD_VP;
         }
 
-        const milestonesClaimed = document.getElementById("milestones" + "_" + color);
+        let milestonesClaimed = document.getElementById("milestones" + "_" + color);
 
         let milestoneElements = document.querySelectorAll("[id*='milestones_']");
         let totalMilestonesClaimed = 0;
