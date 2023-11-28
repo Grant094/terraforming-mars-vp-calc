@@ -3,6 +3,46 @@
     <head>
         <title>Terraforming Mars Victory Point Calculator</title>
         <link rel="stylesheet" href="./styles.css">
+        <datalist id="award_options">
+            <option value="Administrator"></option>
+            <option value="Banker"></option>
+            <option value="Benefactor"></option>
+            <option value="Biologist"></option>
+            <option value="Botanist"></option>
+            <option value="Celebrity"></option>
+            <option value="Collector"></option>
+            <option value="Constructor"></option>
+            <option value="Contractor"></option>
+            <option value="Cultivator"></option>
+            <option value="Desert Settler"></option>
+            <option value="Electrician"></option>
+            <option value="Estate Dealer"></option>
+            <option value="Excentric"></option>
+            <option value="Forecaster"></option>
+            <option value="Founder"></option>
+            <option value="Highlander"></option>
+            <option value="Incorporator"></option>
+            <option value="Industrialist"></option>
+            <option value="Investor"></option>
+            <option value="Landlord"></option>
+            <option value="Landscaper"></option>
+            <option value="Magnate"></option>
+            <option value="Manufacturer"></option>
+            <option value="Metropolist"></option>
+            <option value="Miner"></option>
+            <option value="Mogul"></option>
+            <option value="Politician"></option>
+            <option value="Promoter"></option>
+            <option value="Scientist"></option>
+            <option value="Space Baron"></option>
+            <option value="Suburbian"></option>
+            <option value="Supplier"></option>
+            <option value="Thermalist"></option>
+            <option value="Traveller"></option>
+            <option value="Venuphile"></option>
+            <option value="Visionary"></option>
+            <option value="Zoologist"></option>
+        </datalist>
     </head>
     <body>
         <h1>Terraforming Mars Victory Point Calculator</h1>
@@ -61,7 +101,7 @@
             </tr>
             <tr>
                 <td><button type="button" id="clear_award_1" onclick="clearAwardSelection(1)">Clear</button></td>
-                <th><input type="text" value="Award 1" size="8" /></th>
+                <th><input list="award_options" id="award1_name" name="award1_name" value="Award 1" size="8" /></th>
                 <td id="award1_td_black" name="award1_td_black">
                     <input type="radio" name="award1_black" id="winner1_black" value="winner1_black" oninput="validateAwardSelections(1)" /><label for="winner1_black" id="winner1_black_label">1st</label>
                     <input type="radio" name="award1_black" id="contender1_black" value="contender1_black" oninput="validateAwardSelections(1)" /><label for="contender1_black" id="contender1_black_label">2nd</label>
@@ -85,7 +125,7 @@
             </tr>
             <tr>
                 <td><button type="button" id="clear_award_2" onclick="clearAwardSelection(2)">Clear</button></td>
-                <th><input type="text" value="Award 2" size="8" /></th>
+                <th><input list="award_options" id="award2_name" name="award2_name" value="Award 2" size="8" /></th>
                 <td id="award2_td_black" name="award2_td_black">
                     <input type="radio" name="award2_black" id="winner2_black" value="winner2_black" oninput="validateAwardSelections(2)" /><label for="winner2_black" id="winner2_black_label">1st</label>
                     <input type="radio" name="award2_black" id="contender2_black" value="contender2_black" oninput="validateAwardSelections(2)" /><label for="contender2_black" id="contender2_black_label">2nd</label>
@@ -109,7 +149,7 @@
             </tr>
             <tr>
                 <td><button type="button" id="clear_award_3" onclick="clearAwardSelection(3)">Clear</button></td>
-                <th><input type="text" value="Award 3" size="8" /></th>
+                <th><input list="award_options" id="award3_name" name="award3_name" value="Award 3" size="8" /></th>
                 <td id="award3_td_black" name="award3_td_black">
                     <input type="radio" name="award3_black" id="winner3_black" value="winner3_black" oninput="validateAwardSelections(3)" /><label for="winner3_black" id="winner3_black_label">1st</label>
                     <input type="radio" name="award3_black" id="contender3_black" value="contender3_black" oninput="validateAwardSelections(3)" /><label for="contender3_black" id="contender3_black_label">2nd</label>
