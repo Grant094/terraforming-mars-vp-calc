@@ -4,8 +4,13 @@ from django.db import models
 class Game(models.Model):
     timestamp = models.DateTimeField()
 
+    def __str__(self):
+        return f"Game at {self.timestamp}"
+
 class Person(models.Model):
     name = models.TextField(max_length=200, unique=True)
+    def __str__(self):
+        return f"{self.name}"
 
 class Score(models.Model):
     BLACK = "BLA"
@@ -21,7 +26,7 @@ class Score(models.Model):
         (YELLOW, "Yellow"),
     ]
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
-    name = models.ForeignKey(Person, on_delete=models.CASCADE)
+    person = models.ForeignKey(Person, on_delete=models.CASCADE)
     color = models.CharField(
         max_length=3,
         choices=COLOR_CHOICES,
@@ -29,4 +34,6 @@ class Score(models.Model):
     )
     victory_points = models.IntegerField(default=20)
     megacredits = models.IntegerField(default=0)
-    was_winner = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.person.name} with {self.victory_points} VP and {self.megacredits} MC at {self.game.timestamp}"
