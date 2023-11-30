@@ -18,6 +18,6 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('terraforming_mars_vp_calc_app', include("terraforming_mars_vp_calc_app.urls")),
+    path('', include("terraforming_mars_vp_calc_app.urls")),
     path('admin/', admin.site.urls),
 ]

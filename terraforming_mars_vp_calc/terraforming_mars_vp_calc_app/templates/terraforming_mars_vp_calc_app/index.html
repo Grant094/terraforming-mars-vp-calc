@@ -1,0 +1,5 @@
+{% if latest_game %}
+    <a href="{% url 'game' latest_game.id %}">{{ latest_game.timestamp }}</a>
+{% else %}
+    <p>No games available.</p>
+{% endif %}
