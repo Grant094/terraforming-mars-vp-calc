@@ -4,6 +4,9 @@ from django.db import models
 class Game(models.Model):
     timestamp = models.DateTimeField()
 
+class Person(models.Model):
+    name = models.TextField(max_length=20)
+
 class Player(models.Model):
     BLACK = "BLA"
     BLUE = "BLU"
@@ -18,7 +21,7 @@ class Player(models.Model):
         (YELLOW, "Yellow"),
     ]
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
-    name = models.TextField(max_length=20)
+    name = models.ForeignKey(Person, on_delete=models.CASCADE)
     color = models.CharField(
         max_length=3,
         choices=COLOR_CHOICES,
