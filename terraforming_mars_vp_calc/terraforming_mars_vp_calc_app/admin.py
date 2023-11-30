@@ -4,4 +4,4 @@ from .models import *
 # Register your models here.
 admin.site.register(Game)
 admin.site.register(Person)
-admin.site.register(Player)
+admin.site.register(Score)

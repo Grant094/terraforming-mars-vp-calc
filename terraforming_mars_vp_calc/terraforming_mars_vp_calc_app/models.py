@@ -5,9 +5,9 @@ class Game(models.Model):
     timestamp = models.DateTimeField()
 
 class Person(models.Model):
-    name = models.TextField(max_length=20)
+    name = models.TextField(max_length=200, unique=True)
 
-class Player(models.Model):
+class Score(models.Model):
     BLACK = "BLA"
     BLUE = "BLU"
     GREEN = "GRE"
