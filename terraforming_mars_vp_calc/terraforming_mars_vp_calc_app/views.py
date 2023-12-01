@@ -5,7 +5,7 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    latest_game = Game.objects.order_by("timestamp")[:1]
+    latest_game = Game.objects.first()
     context = {
         "latest_game": latest_game,
     }
