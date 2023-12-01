@@ -1,9 +1,10 @@
+{% load static %}
 {% if game %}
     <!DOCTYPE html>
     <html>
         <head>
             <title>Terraforming Mars Victory Point Calculator</title>
-            <link rel="stylesheet" href="./styles.css">
+            <link rel="stylesheet" href="{% static 'styles.css' %}">
             <datalist id="award_options">
                 <option value="Administrator"></option>
                 <option value="Banker"></option>
@@ -234,7 +235,7 @@
             <br>
             <input type="submit" value="Submit" />
             <p>See the code and contribute <a href="https://github.com/Grant094/terraforming-mars-vp-calc" target="_blank">here</a>.</p>
-            <script src="C:\Users\grant\Documents\repos\terraforming-mars-vp-calc\main.js"></script>
+            <script src="{% static 'main.js' %}"></script>
         </body>
     </html>
 {% else %}
