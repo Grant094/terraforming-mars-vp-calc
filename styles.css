@@ -1,0 +1,32 @@
+input.player_name {
+    font-weight: bold;
+    text-align: center;
+}
+
+col.black {
+    background-color: lightgray;
+}
+
+col.blue {
+    background-color: lightblue;
+}
+
+col.green {
+    background-color: lightgreen;
+}
+
+col.red {
+    background-color: red;
+}
+
+col.yellow {
+    background-color: gold;
+}
+
+.city_button {
+    width: 2em;
+}
+
+td,th {
+    height: 1em;
+}
